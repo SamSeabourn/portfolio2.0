@@ -22,17 +22,17 @@ body {
 .marquee {
   width: 100vw;
   white-space: nowrap;
-  overflow: hidden;
-  box-sizing: border-box;
+  /* overflow: hidden; */
+  /* box-sizing: border-box; */
 }
 .marquee-content {
   text-align: unset;
-  width: 1000%;
+  width: 800%;
   left: 10vw;
   /* height: 6em; */
   display: flex;
   /* padding-left: 100%; */
-  animation: marquee 15s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 
 .tech-card {
@@ -44,14 +44,15 @@ body {
 }
 
 .tech-card img{
-  width: 100%;
+  height: 100%;
   position: relative;
-  top: -22%;
 }
 
 @keyframes marquee {
-  /* 0%   { transform: translate(0, 0); }
-  100% { transform: translate(-100%, 0); } */
+  0%   { transform: translate(0, 0); }
+  2%   { transform: translate(1%, 0); }
+  50%  { transform: translate(-88%, 0); }
+  100% { transform: translate(0, 0); }
 }
 
 /* For mobile phones: */
@@ -76,12 +77,29 @@ body {
   margin-top: 10vw;
 }
 
-.p-top-10vw {
-  padding-top: 10vw;
+.m-bottom-10vw {
+  margin-bottom: 10vw;
+}
+
+.m-top-5vw {
+  margin-top: 5vw;
+}
+
+.m-bottom-5vw {
+  margin-bottom: 5vw;
 }
 
 .p-bottom-10vw {
   padding-bottom: 10vw;
+}
+.p-top-10vw {
+  padding-top: 10vw;
+}
+
+.drop-shadow {
+  -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
 }
 
 

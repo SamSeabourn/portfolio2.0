@@ -17,7 +17,7 @@ class HeroPanel extends Component {
             I believe that software should not only function well but are feel great to use. 
             I love working with people to bring these type of experiences to the web.
           </p>
-        <img className="portrait p-top-10vw" src={ Portrait } />
+        <img className="portrait m-top-10vw m-bottom-5vw" src={ Portrait } />
         <TechMarquee />
       </div>
     );
