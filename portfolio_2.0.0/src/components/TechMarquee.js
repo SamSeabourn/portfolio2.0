@@ -20,49 +20,22 @@ import Tech15 from '../images/tech/tech (15).svg'
 import Tech16 from '../images/tech/tech (16).svg'
 import Tech17 from '../images/tech/tech (17).svg'
 
-
-// const TechMarquee = ( prop ) =>{
-//   return (
-//     <div className="marquee">
-//       <div className="marquee-content"> 
-//         <TechCard source={ Tech1 } />
-//         <TechCard source={ Tech2 } />
-//         <TechCard source={ Tech3 } />
-//         <TechCard source={ Tech4 } />
-//         <TechCard source={ Tech5 } />
-//         <TechCard source={ Tech6 } />
-//         <TechCard source={ Tech7 } />
-//         <TechCard source={ Tech8 } />
-//         <TechCard source={ Tech9 } />
-//         <TechCard source={ Tech10 } />
-//         <TechCard source={ Tech11 } />
-//         <TechCard source={ Tech12 } />
-//         <TechCard source={ Tech13 } />
-//         <TechCard source={ Tech14 } />
-//         <TechCard source={ Tech15 } />
-//         <TechCard source={ Tech16 } />
-//         <TechCard source={ Tech17 } />
-//       </div>
-//     </div>
-//   )
-// }
-
-class TechMarquee extends React.Component {
-  render() {
-    var settings = {
+const TechMarquee = () => {
+    var sliderSettings = {
       infinite: true,
       slidesToShow: 2,
-      slidesToScroll: 2,
+      speed: 800,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 2500,
       dots: false,
       arrows: false,
       mobileFirst: true,
       cssEase: 'ease-out',
       centerMode: true,
     };
+
     return (
-      <Slider {...settings}>
+      <Slider {...sliderSettings}>
         <TechCard source={ Tech1 } />
         <TechCard source={ Tech2 } />
         <TechCard source={ Tech3 } />
@@ -82,7 +55,7 @@ class TechMarquee extends React.Component {
         <TechCard source={ Tech17 } />
       </Slider>
     );
-  }
+
 }
 
 export default TechMarquee;

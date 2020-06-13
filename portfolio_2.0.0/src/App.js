@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import TitlePanel from './components/TitlePanel';
 import HeroPanel from './components/HeroPanel';
+import ProjectsPanel from './components/MyWorkPanel';
 import create from 'zustand'
 
 // const [useStore] = create(set => ({
@@ -26,7 +27,7 @@ function App() {
     <div className="App">
       <TitlePanel/>
       <HeroPanel />
-
+      <ProjectsPanel />
     </div>
   );
 }

@@ -6,6 +6,46 @@ h1, h2 {
   font-weight: 900;
 }
 
+button {
+  height: 3em;
+  font-weight: bold;
+  border-radius: 3em;
+  border: 2px solid rgb(206, 206, 206);
+  background: transparent;
+  color:  rgb(206, 206, 206);
+  text-align: center;
+  margin: 0.5em;
+  padding: 0 1em;
+  transition: 550ms ease-in-out;
+}
+
+button:hover {
+  background:  rgba(225,9,175,1);
+  border: 2px solid rgba(206, 206, 206, 0);
+  transition: 150ms ease-in-out;
+}
+
+button img {
+  height: 1.1em;
+  width: 1.1em;
+  float: left;
+  margin-right: 0.5em;
+}
+
+.slick-dots li button:before {
+  color: white;
+}
+
+.text-gradient {
+    background-image: rgb(225,9,175);
+    background-image: -moz-linear-gradient(270deg, rgba(225,9,175,1) 0%, rgba(251,120,47,1) 100%);
+    background-image: -webkit-linear-gradient(170deg, rgba(225,9,175,1) 0%, rgba(251,120,47,1) 100%);
+    background-image: linear-gradient(270deg, rgba(225,9,175,1) 0%, rgba(251,120,47,1) 100%);
+    background-image: linear-gradient(270deg, rgba(225,9,175,1) 0%, rgba(251,120,47,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 .energy-gradient {
   background: rgb(225,9,175);
@@ -32,7 +72,7 @@ h1, h2 {
 }
 
 .tech-card {
-  margin: 0px 3px;
+  margin: 5vw 1vw;
   background-color: #fff;
   border-radius: 5px;
   padding: 2% 7%;
@@ -91,10 +131,26 @@ h1, h2 {
   padding-top: 10vw;
 }
 
+.p-sides-10vw {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.p-all-10vw {
+  padding: 10vw;
+}
+
+.p-bottom-5w {
+  padding-bottom: 5vw;
+}
+.p-top-5vw {
+  padding-top: 5vw;
+}
+
 .drop-shadow {
-  -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.4);
-  -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.4);
-  box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
 }
 
 
@@ -109,6 +165,8 @@ h1, h2 {
   position: relative;
   width: 80vw;
 }
+
+
 
 
 @media only screen and (min-width: 600px) {
