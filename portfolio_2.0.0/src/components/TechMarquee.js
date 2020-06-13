@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react'
+import TechCard from './TechCard';
+import Slider from 'react-slick'
 
 import Tech1 from '../images/tech/tech (1).svg'
 import Tech2 from '../images/tech/tech (2).svg'
@@ -17,41 +19,70 @@ import Tech14 from '../images/tech/tech (14).svg'
 import Tech15 from '../images/tech/tech (15).svg'
 import Tech16 from '../images/tech/tech (16).svg'
 import Tech17 from '../images/tech/tech (17).svg'
-// import Tech1 from '../images/tech/tech (1).svg'
 
 
-import TechCard from './TechCard';
+// const TechMarquee = ( prop ) =>{
+//   return (
+//     <div className="marquee">
+//       <div className="marquee-content"> 
+//         <TechCard source={ Tech1 } />
+//         <TechCard source={ Tech2 } />
+//         <TechCard source={ Tech3 } />
+//         <TechCard source={ Tech4 } />
+//         <TechCard source={ Tech5 } />
+//         <TechCard source={ Tech6 } />
+//         <TechCard source={ Tech7 } />
+//         <TechCard source={ Tech8 } />
+//         <TechCard source={ Tech9 } />
+//         <TechCard source={ Tech10 } />
+//         <TechCard source={ Tech11 } />
+//         <TechCard source={ Tech12 } />
+//         <TechCard source={ Tech13 } />
+//         <TechCard source={ Tech14 } />
+//         <TechCard source={ Tech15 } />
+//         <TechCard source={ Tech16 } />
+//         <TechCard source={ Tech17 } />
+//       </div>
+//     </div>
+//   )
+// }
 
-// const buildTechUrls = 
-
-class TechMarquee extends Component {
-  state = {  }
-  render() { 
-    console.log(Tech1)
+class TechMarquee extends React.Component {
+  render() {
+    var settings = {
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: false,
+      arrows: false,
+      mobileFirst: true,
+      cssEase: 'ease-out',
+      centerMode: true,
+    };
     return (
-      <div className="marquee">
-        <div className="marquee-content"> 
-          <TechCard source={ Tech1 } />
-          <TechCard source={ Tech2 } />
-          <TechCard source={ Tech3 } />
-          <TechCard source={ Tech4 } />
-          <TechCard source={ Tech5 } />
-          <TechCard source={ Tech6 } />
-          <TechCard source={ Tech7 } />
-          <TechCard source={ Tech8 } />
-          <TechCard source={ Tech9 } />
-          <TechCard source={ Tech10 } />
-          <TechCard source={ Tech11 } />
-          <TechCard source={ Tech12 } />
-          <TechCard source={ Tech13 } />
-          <TechCard source={ Tech14 } />
-          <TechCard source={ Tech15 } />
-          <TechCard source={ Tech16 } />
-          <TechCard source={ Tech17 } />
-        </div>
-      </div>
-  )
+      <Slider {...settings}>
+        <TechCard source={ Tech1 } />
+        <TechCard source={ Tech2 } />
+        <TechCard source={ Tech3 } />
+        <TechCard source={ Tech4 } />
+        <TechCard source={ Tech5 } />
+        <TechCard source={ Tech6 } />
+        <TechCard source={ Tech7 } />
+        <TechCard source={ Tech8 } />
+        <TechCard source={ Tech9 } />
+        <TechCard source={ Tech10 } />
+        <TechCard source={ Tech11 } />
+        <TechCard source={ Tech12 } />
+        <TechCard source={ Tech13 } />
+        <TechCard source={ Tech14 } />
+        <TechCard source={ Tech15 } />
+        <TechCard source={ Tech16 } />
+        <TechCard source={ Tech17 } />
+      </Slider>
+    );
   }
 }
- 
+
 export default TechMarquee;
