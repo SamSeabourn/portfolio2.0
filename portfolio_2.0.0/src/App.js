@@ -2,8 +2,10 @@ import React from 'react';
 import './App.css';
 import TitlePanel from './components/TitlePanel';
 import HeroPanel from './components/HeroPanel';
-import ProjectsPanel from './components/MyWorkPanel';
+import ProjectsPanel from './components/ProjectPanel';
 import create from 'zustand'
+import Footer from './components/Footer';
+import BottomLinks from './components/BottomLinks';
 
 // const [useStore] = create(set => ({
 //   count: 1,
@@ -28,6 +30,8 @@ function App() {
       <TitlePanel/>
       <HeroPanel />
       <ProjectsPanel />
+      <BottomLinks />
+      <Footer />
     </div>
   );
 }

@@ -33,7 +33,7 @@ const TechMarquee = () => {
       cssEase: 'ease-out',
       centerMode: true,
     };
-
+    
     return (
       <Slider {...sliderSettings}>
         <TechCard source={ Tech1 } />
