@@ -7,7 +7,70 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* paint colors */
+.f1c0 {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 0.05%;
 }
+
+.f2c0 {
+  fill: #acacac;
+  stroke: #acacac;
+  stroke-width: 0.05%;
+}
+
+.f3c0 {
+  fill: #595959;
+  stroke: #595959;
+  stroke-width: 0.05%;
+}
+
+.f1c1 {
+  fill: #fb782f;
+  stroke: #fb782f;
+  stroke-width: 0.05%;
+}
+
+.f2c1 {
+  fill: #c75d22;
+  stroke: #c75d22;
+  stroke-width: 0.05%;
+}
+
+.f3c1 {
+  fill: #6e3414;
+  stroke: #6e3414;
+  stroke-width: 0.05%;
+}
+
+.f1c2 {
+  fill: #e109af;
+  stroke: #e109af;
+  stroke-width: 0.05%;
+}
+
+.f2c2 {
+  fill: #9c0579;
+  stroke: #9c0579;
+  stroke-width: 0.05%;
+}
+
+.f3c2 {
+  fill: #5c0347;
+  stroke: #5c0347;
+  stroke-width: 0.05%;
+}
+
+.flash {
+  fill: rgba(0, 0, 0, 1);
+  animation: pulsate 2s infinite;
+}
+
+@keyframes pulsate {
+  0%   { fill: rgba(0, 0, 0, 1); }
+  50%  { fill: rgba(0, 0, 0, 0); }
+  100% { fill: rgba(0, 0, 0, 1); }
+}
+
+

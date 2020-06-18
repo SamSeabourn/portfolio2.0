@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import SamLogo from '../images/Sam_Logo.svg'
-import TopSplash from '../images/Top_Splash_Full.svg'
+import TopSplash from './TopSplash';
+// import TopSplash from '../images/Top_Splash_Full.svg'
 
 class TitlePanel extends Component {
   render() { 
     return ( 
       <div className="title-panel" style={{ background: '#202536' }}>
         <img className="m-10vw" src={ SamLogo } alt="Sam Seabourn: Web Developer" />
-        <img className="top-splash" src={ TopSplash } alt="Man with paintbrush" />
+        <TopSplash />
       </div>
         
      );
   }
 }
+
+// <img className="top-splash" src={ TopSplash } alt="Man with paintbrush" />
  
 export default TitlePanel;

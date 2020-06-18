@@ -19,10 +19,15 @@ button {
   transition: 550ms ease-in-out;
 }
 
+button:focus {outline:0;}
+
 button:hover {
   background:  rgba(225,9,175,1);
   border: 2px solid rgba(206, 206, 206, 0);
   transition: 150ms ease-in-out;
+  -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
 }
 
 button img {
@@ -32,12 +37,14 @@ button img {
   margin-right: 0.5em;
 }
 
-.bottom-links svg {
+.bottom-links img {
+  margin: 0 1vw;
+  height: 10vw;
   transition: 550ms ease-in-out;
+  
 }
 
-.bottom-links svg:hover {
-  opacity: 90%;
+.bottom-links img:hover {
   transform: scale(1.1);
   transition: 150ms ease-in-out;
 }
@@ -85,25 +92,29 @@ button img {
   background-color: #fff;
   border-radius: 5px;
   padding: 2% 7%;
+  
 }
 
 .tech-card img{
   height: 100%;
 }
 
-@keyframes marquee {
+/* @keyframes marquee {
   0%   { transform: translate(0, 0); }
   2%   { transform: translate(1%, 0); }
   50%  { transform: translate(-88%, 0); }
   100% { transform: translate(0, 0); }
-}
+} */
 
 /* For mobile phones: */
 .title-panel {
   position: relative;
   overflow: hidden;
-  /* height: 36em; */
   width: 100%;
+}
+
+.top-splash {
+  margin: -10vw 0em 10vw 10vw;
 }
 
 .center-text {
@@ -162,12 +173,7 @@ button img {
   box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
 }
 
-.top-splash {
-  position: relative;
-  top: -4em;
-  left: 4em;
-  width: 232vw;
-}
+
 
 .footer-panel {
   overflow: hidden;
@@ -205,6 +211,13 @@ button img {
   background-color: red;
 }
 
+.slider-video {
+  border: none;
+}
+
+.ytp-show-cards-title {
+  display: none;
+}
 
 
 
