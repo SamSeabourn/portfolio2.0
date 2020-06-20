@@ -7,7 +7,7 @@ class TitlePanel extends Component {
   render() { 
     return ( 
       <div className="title-panel" style={{ background: '#202536' }}>
-        <img className="m-10vw" src={ SamLogo } alt="Sam Seabourn: Web Developer" />
+        <img className="sam-logo" src={ SamLogo } alt="Sam Seabourn: Web Developer" />
         <TopSplash />
       </div>
         

@@ -5,17 +5,17 @@ import LinkedInIcon from '../images/icons/icon_linkedin.svg'
 const BottomLinks = () => {
 
   const openGithub = () => {
-    console.log('yeet')
+    window.open("https://github.com/SamSeabourn", "_blank");
   }
 
   const openLinkedin = () => {
-    console.log('yowza')
+    window.open("https://www.linkedin.com/in/samseabourn/", "_blank");
   }
 
   return(
     <div className="bottom-links center-text">
-      <img src={ GithubIcon }></img>
-      <img src={ LinkedInIcon }></img>
+      <img onClick={ openGithub } src={ GithubIcon }></img>
+      <img onClick={ openLinkedin } src={ LinkedInIcon }></img>
     </div>
   )
 }

@@ -1,9 +1,23 @@
 /* globals */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 300px;
+}
+
 h1, h2 {
   margin: 0;
   font-family: 'Lato', sans-serif;
-  font-size : 25pt;
+  font-size : 8vw;
   font-weight: 900;
+}
+
+p { 
+  font-size : 4vw;
 }
 
 button {
@@ -35,6 +49,11 @@ button img {
   width: 1.1em;
   float: left;
   margin-right: 0.5em;
+}
+
+.app {
+  width: 100%;
+  margin: 0%;
 }
 
 .bottom-links img {
@@ -99,22 +118,28 @@ button img {
   height: 100%;
 }
 
-/* @keyframes marquee {
-  0%   { transform: translate(0, 0); }
-  2%   { transform: translate(1%, 0); }
-  50%  { transform: translate(-88%, 0); }
-  100% { transform: translate(0, 0); }
-} */
-
-/* For mobile phones: */
 .title-panel {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
 
+.sam-logo {
+  margin: 10vw 10vw 
+}
+
 .top-splash {
-  margin: -10vw 0em 10vw 10vw;
+  margin: -12vw 0em 10vw 19vw;
+  height: 22em;
+}
+
+.hero-panel {
+  text-align: center;
+  padding: 10vw 0;
+}
+
+.hero-panel-text {
+  margin: 10vw
 }
 
 .center-text {
@@ -173,8 +198,6 @@ button img {
   box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
 }
 
-
-
 .footer-panel {
   overflow: hidden;
   position: relative;
@@ -197,6 +220,7 @@ button img {
 .portrait {
   position: relative;
   width: 80vw;
+  margin: 0 0 0 0;
 }
 
 .bottom-links {
@@ -219,14 +243,172 @@ button img {
   display: none;
 }
 
+/* paint colors */
+.f1c0 {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 0.05%;
+}
+
+.f2c0 {
+  fill: #acacac;
+  stroke: #acacac;
+  stroke-width: 0.05%;
+}
+
+.f3c0 {
+  fill: #595959;
+  stroke: #595959;
+  stroke-width: 0.05%;
+}
+
+.f1c1 {
+  fill: #fb782f;
+  stroke: #fb782f;
+  stroke-width: 0.05%;
+}
+
+.f2c1 {
+  fill: #c75d22;
+  stroke: #c75d22;
+  stroke-width: 0.05%;
+}
+
+.f3c1 {
+  fill: #6e3414;
+  stroke: #6e3414;
+  stroke-width: 0.05%;
+}
+
+.f1c2 {
+  fill: #e109af;
+  stroke: #e109af;
+  stroke-width: 0.05%;
+}
+
+.f2c2 {
+  fill: #9c0579;
+  stroke: #9c0579;
+  stroke-width: 0.05%;
+}
+
+.f3c2 {
+  fill: #5c0347;
+  stroke: #5c0347;
+  stroke-width: 0.05%;
+}
+
+.flash {
+  /* flash is disabled on mobile devices */
+}
+
+@keyframes pulsate {
+  0%   { 
+    fill: rgba(0, 0, 0, 1); 
+    stroke: 2px solid rgba(0, 0, 0, 1);
+  }
+  50%  { 
+    fill: rgba(0, 0, 0, 0);
+    stroke: 2px solid rgba(0, 0, 0, 1); 
+  }
+  100% { 
+    fill: rgba(0, 0, 0, 1); 
+    stroke: 2px solid rgba(0, 0, 0, 1);
+  }
+}
+
+/* MOBLIES DEVICES */
+
+@media only screen and (min-width: 440px) {
+  .top-splash {
+    margin: -7vw 0em 10vw 10em;
+    height: 23em;
+  }  
+}
 
 
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
+@media only screen and (min-width: 546px) {
+  .top-splash {
+    margin: -10vw 0em 10vw 6em;
+    height: 36em;
+  }  
+}
+
+@media only screen and (min-width: 678px) {
+  .top-splash {
+    margin: -10vw 0em 10vw 11em;
+    height: 43em;
+  } 
+  
+}
+
+@media only screen and (min-width: 870px) {
+  .top-splash {
+    margin: -3vw 0em 8vw 14em;
+    height: 49em;
+  }  
+}
+
+@media only screen and (min-width: 1040px) {
+  .top-splash {
+    margin: -3vw 0em 10vw 20em;
+    height: 57em;
+  }  
+}
+
+/* DESKTOPS */
+
+@media only screen and (min-width: 1280px) {
+
+
+  h1,h2 {
+    font-size: 8vh;
+    text-align: left;
+    margin: 0 7vw;
+  }
+
+  p {
+    font-size: 2.5vh;
+    text-align: left;
+  }
+
+  .flash {
+    animation: pulsate 2s infinite;
+    fill: rgba(0, 0, 0, 1);
+    stroke: rgba(0, 0, 0, 1);
+    stroke-width: 1px;
+  }
+  .sam-logo {
+    margin: 15vw 7vw 0vw;
+    height: 13vw;
+  }
+  .top-splash {
+    height: 30vw;
+    margin: -47vw 0vw 1vw 42vw;
+    height: 59vw;
+  }
+
+  .hero-panel {
+    padding: 6vw 0;
+  }
+
+  .hero-panel-text {
+    margin: 1vw 7vw;
+    width: 45vw;
+  }
+
+  .portrait {
+    height: 46vh;
+    width: auto;
+    left: 51vh;
+    top: -55vh;
+  }
+
 
 }
 
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
+/* @media only screen and (min-width: 1920px) {
 
-}
+
+
+} */
