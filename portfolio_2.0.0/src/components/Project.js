@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from './Button'
 import Slider from 'react-slick'
 
@@ -41,13 +41,16 @@ const Project = ( props ) => {
                 className="slider-video" 
                 volume="0" 
                 src={ `${youtubeUrl}?autoplay=0&controls=0"&modestbranding=1` } 
-                onLoad={ () => setIframeSize( iFrameElement.current) }>
+                onLoad={ () => setIframeSize( iFrameElement.current) }
+                >
         </iframe>
       </div>
     )
   }
 
+
   const setIframeSize = (element) => {
+    console.log('yay')
     if (element != null) {
       element.height = imgElement.current.height;
       element.width = imgElement.current.width;
@@ -62,13 +65,19 @@ const Project = ( props ) => {
     return _p8() + _p8(true) + _p8(true) + _p8();  
   } 
 
-  window.addEventListener('resize', setIframeSize(iFrameElement.current) )
+
+    window.addEventListener('resize', setIframeSize(iFrameElement.current) )
+
+ 
 
   return (
     <div className="drop-shadow m-top-10vw project" style={{ background: "rgba(66,72,94, 0.4)"  }}>
       <Slider {...sliderSettings}>
+        
+       { youtubeDemo() }
+
         { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
-        { youtubeDemo() }
+        
       </Slider>
       <div className="p-all-10vw">
         <p style={{ color: "#fff" }}>

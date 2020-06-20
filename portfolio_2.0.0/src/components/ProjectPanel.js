@@ -20,7 +20,7 @@ import demoGBImage3 from '../images/work_images/demo_gb3.jpg'
 
 const MyWorkPanel = () => {
     return (
-        <div className="center-text p-top-10vw p-bottom-10vw project-panel" style={{ background: '#202536' }}>
+        <div className="project-panel" style={{ background: '#202536' }}>
           <h2 className="text-gradient"> My Work.</h2>
           <Project
             projectName={ "Slinky" }
