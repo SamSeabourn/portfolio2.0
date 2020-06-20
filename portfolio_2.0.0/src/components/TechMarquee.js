@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import TechCard from './TechCard';
 import Slider from 'react-slick'
+import create from 'zustand'
 
 import Tech1 from '../images/tech/tech (1).svg'
 import Tech2 from '../images/tech/tech (2).svg'
@@ -20,22 +21,64 @@ import Tech15 from '../images/tech/tech (15).svg'
 import Tech16 from '../images/tech/tech (16).svg'
 import Tech17 from '../images/tech/tech (17).svg'
 
-const TechMarquee = () => {
-    var sliderSettings = {
-      infinite: true,
-      slidesToShow: 2,
-      speed: 800,
-      autoplay: true,
-      autoplaySpeed: 2500,
-      dots: false,
-      arrows: false,
-      mobileFirst: true,
-      cssEase: 'ease-out',
-      centerMode: true,
-    };
-    
-    return (
-      <Slider {...sliderSettings}>
+class TechMarquee extends Component {
+  constructor() {
+    super();
+    this.state ={
+      settings: {
+        infinite: true,
+        slidesToShow: 2,
+        speed: 800,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        dots: false,
+        arrows: false,
+        mobileFirst: true,
+        cssEase: 'ease-out',
+        centerMode: true
+      }
+    }
+  }
+
+  updateCardCount = () => {
+    var windowWidth = document.getElementsByClassName('hero-panel')[0].offsetWidth
+    if (windowWidth > 1280) {
+      this.setState( { settings: {
+        infinite: true,
+        slidesToShow: 6,
+        speed: 800,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        dots: false,
+        arrows: false,
+        mobileFirst: true,
+        cssEase: 'ease-out',
+        centerMode: true
+      }} )
+    } else {
+      this.setState( {  settings: {
+        infinite: true,
+        slidesToShow: 2,
+        speed: 800,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        dots: false,
+        arrows: false,
+        mobileFirst: true,
+        cssEase: 'ease-out',
+        centerMode: true
+      }} )
+    }
+  }
+
+  componentDidMount(){
+    this.updateCardCount()
+    window.addEventListener('resize', this.updateCardCount)
+  }
+
+render() {
+  return (
+      <Slider {...this.state.settings} className="tech-marquee">
         <TechCard source={ Tech1 } />
         <TechCard source={ Tech2 } />
         <TechCard source={ Tech3 } />
@@ -55,7 +98,7 @@ const TechMarquee = () => {
         <TechCard source={ Tech17 } />
       </Slider>
     );
-
+  }
 }
 
 export default TechMarquee;

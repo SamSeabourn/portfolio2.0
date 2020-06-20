@@ -134,6 +134,7 @@ button img {
 }
 
 .hero-panel {
+  /* overflow: hidden; */
   text-align: center;
   padding: 10vw 0;
 }
@@ -398,10 +399,14 @@ button img {
   }
 
   .portrait {
-    height: 46vh;
+    height: 42vh;
     width: auto;
-    left: 51vh;
-    top: -55vh;
+    left: 47vh;
+    top: -44vh;
+  }
+
+  .tech-marquee {
+    margin: -49vh 0 -6vh 0;
   }
 
 

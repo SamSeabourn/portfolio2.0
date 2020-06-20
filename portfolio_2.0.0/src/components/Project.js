@@ -2,7 +2,6 @@ import React from 'react';
 import Button from './Button'
 import Slider from 'react-slick'
 
-import GithubIcon from '../images/icons/icon_github.svg'
 import GithubIcon2 from '../images/icons/icon_github2.svg'
 import LinkIcon from '../images/icons/icon_url.svg'
 
@@ -49,8 +48,10 @@ const Project = ( props ) => {
   }
 
   const setIframeSize = (element) => {
-    element.height = imgElement.current.height;
-    element.width = imgElement.current.width;
+    if (element != null) {
+      element.height = imgElement.current.height;
+      element.width = imgElement.current.width;
+    }
   }
 
   const guid = () => {  //React warning says that eveything needs a key as it could be breaking in the future
@@ -60,6 +61,8 @@ const Project = ( props ) => {
     }  
     return _p8() + _p8(true) + _p8(true) + _p8();  
   } 
+
+  window.addEventListener('resize', setIframeSize(iFrameElement.current) )
 
   return (
     <div className="drop-shadow m-top-10vw project" style={{ background: "rgba(66,72,94, 0.4)"  }}>

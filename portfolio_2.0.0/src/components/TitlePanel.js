@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SamLogo from '../images/Sam_Logo.svg'
 import TopSplash from './TopSplash';
-// import TopSplash from '../images/Top_Splash_Full.svg'
 
 class TitlePanel extends Component {
   render() { 
@@ -15,6 +14,4 @@ class TitlePanel extends Component {
   }
 }
 
-// <img className="top-splash" src={ TopSplash } alt="Man with paintbrush" />
- 
 export default TitlePanel;
