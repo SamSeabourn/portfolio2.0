@@ -73,11 +73,8 @@ const Project = ( props ) => {
   return (
     <div className="drop-shadow m-top-10vw project" style={{ background: "rgba(66,72,94, 0.4)"  }}>
       <Slider {...sliderSettings}>
-        
-       { youtubeDemo() }
-
         { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
-        
+        { youtubeDemo() }
       </Slider>
       <div className="p-all-10vw">
         <p style={{ color: "#fff" }}>
