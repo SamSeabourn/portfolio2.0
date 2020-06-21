@@ -1,12 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Button from './Button'
 import Slider from 'react-slick'
 
 import GithubIcon2 from '../images/icons/icon_github2.svg'
 import LinkIcon from '../images/icons/icon_url.svg'
 
+
+
+
 const Project = ( props ) => {
-  
+  const { imageUrls, writeUp, keyWords, projectName, githubUrl, linkText, linkUrl, youtubeUrl } = props;
+
+  const urls = [];
+  const writeUpText = writeUp.split(' ');
+  const imgElement = React.useRef(null);
+  const iFrameElement = React.useRef(null);
   const sliderSettings = {
     dots: true,
     speed: 500,
@@ -16,11 +24,25 @@ const Project = ( props ) => {
     infinite: false
   };
 
-  const { imageUrls, writeUp, keyWords, projectName, githubUrl, linkText, linkUrl, youtubeUrl } = props;
-  const urls = [];
-  const writeUpText = writeUp.split(' ');
-  const imgElement = React.useRef(null);
-  const iFrameElement = React.useRef(null);
+  //Custom hook
+  function useWindowSize() {
+    const [size, setSize] = useState([0, 0]);
+    useLayoutEffect(() => {
+      function updateSize() {
+        setSize([window.innerWidth, window.innerHeight]);
+      }
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      console.log("window resized")
+      return () => window.removeEventListener('resize', updateSize);
+    }, []);
+    return size;
+  }
+
+  const [width, height ] = useWindowSize()
+  
+
+
   
   for (let i = 0; i < imageUrls.length; i++) {
     urls.push({ key: i , value: `${imageUrls[i]}` })
@@ -34,20 +56,21 @@ const Project = ( props ) => {
     if (typeof githubUrl !== 'undefined') return <Button linkText="Github" linkUrl={ githubUrl } icon={ GithubIcon2 } />
   }
 
+
+
   const youtubeDemo = () => {
     if (typeof youtubeUrl !== 'undefined') return(
-      <div >
         <iframe ref={ iFrameElement } 
+                width={ width }
+                height={ width / 1.6 }
                 className="slider-video" 
                 volume="0" 
                 src={ `${youtubeUrl}?autoplay=0&controls=0"&modestbranding=1` } 
-                onLoad={ () => setIframeSize( iFrameElement.current) }
+                onLoad={ () => setIframeSize( iFrameElement.current ) }
                 >
         </iframe>
-      </div>
     )
   }
-
 
   const setIframeSize = (element) => {
     console.log('yay')
@@ -66,15 +89,14 @@ const Project = ( props ) => {
   } 
 
 
-    window.addEventListener('resize', setIframeSize(iFrameElement.current) )
-
- 
-
   return (
     <div className="drop-shadow m-top-10vw project" style={{ background: "rgba(66,72,94, 0.4)"  }}>
       <Slider {...sliderSettings}>
-        { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
+
         { youtubeDemo() }
+
+        { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
+        
       </Slider>
       <div className="p-all-10vw">
         <p style={{ color: "#fff" }}>
@@ -84,6 +106,7 @@ const Project = ( props ) => {
         </p>
           { urlButton() }
           { githubButton() }
+
       </div>
     </div>
   )
