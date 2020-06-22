@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useState } from 'react';
 import Button from './Button'
 import Slider from 'react-slick'
 
@@ -9,19 +9,22 @@ import LinkIcon from '../images/icons/icon_url.svg'
 
 
 const Project = ( props ) => {
-  const { imageUrls, writeUp, keyWords, projectName, githubUrl, linkText, linkUrl, youtubeUrl } = props;
+  const { imageUrls, writeUp, keyWords, githubUrl, linkText, linkUrl, youtubeUrl } = props;
 
   const urls = [];
   const writeUpText = writeUp.split(' ');
+
   const imgElement = React.useRef(null);
   const iFrameElement = React.useRef(null);
+  const projectContainer = React.useRef(null)
   const sliderSettings = {
     dots: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    infinite: false
+    infinite: false,
+    arrows: false
   };
 
     
@@ -57,8 +60,6 @@ const Project = ( props ) => {
     if (typeof githubUrl !== 'undefined') return <Button linkText="Github" linkUrl={ githubUrl } icon={ GithubIcon2 } />
   }
 
-
-
   const youtubeDemo = () => {
     if (typeof youtubeUrl !== 'undefined') return(
         <iframe ref={ iFrameElement } 
@@ -67,18 +68,24 @@ const Project = ( props ) => {
                 className="slider-video" 
                 volume="0" 
                 src={ `${youtubeUrl}?autoplay=0&controls=0"&modestbranding=1` } 
-                onLoad={ () => setIframeSize( iFrameElement.current ) }
                 >
         </iframe>
     )
   }
 
   const setIframeSize = (element) => {
-    console.log('yay')
     if (element != null) {
       element.height = imgElement.current.height;
       element.width = imgElement.current.width;
     }
+    if (imgElement.current.width < 1280) {
+      projectContainer.current.style.height = `${imgElement.current.height * 2.3}px` 
+    }
+    else
+    {
+      projectContainer.current.style.height = `${imgElement.current.height}px` 
+    }
+    
   }
 
   const guid = () => {  //React warning says that eveything needs a key as it could be breaking in the future
@@ -89,23 +96,24 @@ const Project = ( props ) => {
     return _p8() + _p8(true) + _p8(true) + _p8();  
   } 
 
-
   return (
-    <div className="project" style={{ background: "rgba(66,72,94, 0.4)"  }}>
+    <div ref={projectContainer} className="project" style={{ background: "rgba(66,72,94, 0.4)", height: iframeHeight  }}>
       <div className="project-slider">
         <Slider {...sliderSettings}>
-        { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
-        { youtubeDemo() }
+          { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
+          { youtubeDemo() }
         </Slider>
       </div>
-      <div className="project-text">
+      <div className="project-text" onLoad={ () => setIframeSize( iFrameElement.current ) }>
         <p style={{ color: "#fff" }}>
           { writeUpText.map( ( word ) => { 
             return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` }) 
           }
         </p>
+        <div className="button-container">
           { urlButton() }
           { githubButton() }
+        </div>
       </div>
     </div>
   )

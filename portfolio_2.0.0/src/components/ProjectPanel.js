@@ -53,7 +53,7 @@ const MyWorkPanel = () => {
             youtubeUrl={ "https://www.youtube.com/embed/5S6PauVO7To" }
             keyWords={ ["Mongo.DB,", "Node.js,", "Express,",""  ] }
             writeUp={
-              "Inspired by the growing community of people developing games for the original Gameboy, I decided to build a platform that would allow people to share their own demos and trial games that other developers had made. In addition I wanted to be able to produce physical copies of these games for the 1989 console, so I bought the hardware to do so. This app demonstrates a JavaScript Gameboy emulator running in the browser and the ability to upload, mount and play .gb files from blob storage. This app was built in just over a week using Node.js, Express, Mongo.DB, Bcrypt and Cloudinary. I designed this platform mobile-first as I wanted to focus on making the app user friendly for mobile users. As part of this project I built and published a game as a proof of concept. The game is a little story about myself and is fully playable on the site as well as on the original 1989 hardware."}
+              "DemoGB is a platform to allow people to share their own demos and trial games that other developers had made. This app demonstrates a JavaScript Gameboy emulator running in the browser and the ability to upload, mount and play .gb files from blob storage. This app was built in just over a week using Node.js, Express, Mongo.DB, Bcrypt and Cloudinary. As part of this project I built and published a a short game playable on the site as well as on the original 1989 hardware."}
             />
 
         </div>

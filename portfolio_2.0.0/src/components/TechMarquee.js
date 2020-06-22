@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import TechCard from './TechCard';
 import Slider from 'react-slick'
-import create from 'zustand'
 
 import Tech1 from '../images/tech/tech (1).svg'
 import Tech2 from '../images/tech/tech (2).svg'
@@ -41,8 +40,10 @@ class TechMarquee extends Component {
   }
 
   updateCardCount = () => {
-    var windowWidth = document.getElementsByClassName('hero-panel')[0].offsetWidth
-    if (windowWidth > 1280) {
+    var windowWidth = window.innerWidth;
+    console.log('window width is')
+    console.log(windowWidth)
+    if (windowWidth > 1278) {
       this.setState( { settings: {
         infinite: true,
         slidesToShow: 6,
