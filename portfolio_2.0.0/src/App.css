@@ -9,6 +9,10 @@ body {
   min-width: 300px;
 }
 
+.selectedColor {
+  transition: ease-in-out 1s;
+}
+
 h1, h2 {
   margin: 0;
   font-family: 'Lato', sans-serif;
@@ -140,7 +144,7 @@ button img {
 }
 
 .hero-panel-text {
-  margin: 10vw
+  margin: 10vw 10vw 10vw 10vw
 }
 
 .project-panel {
@@ -151,6 +155,10 @@ button img {
 .project {
   position: relative; 
   z-index: 20;
+  -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  margin-top: 10vw;
 }
 
 
@@ -193,7 +201,7 @@ button img {
   padding-right: 10vw;
 }
 
-.p-all-10vw {
+.project-text {
   padding: 10vw;
 }
 
@@ -348,7 +356,10 @@ button img {
     margin: -10vw 0em 10vw 11em;
     height: 43em;
   } 
-  
+
+  p {
+    font-size: 2.5vw;
+  }
 }
 
 @media only screen and (min-width: 870px) {
@@ -356,6 +367,8 @@ button img {
     margin: -3vw 0em 8vw 14em;
     height: 49em;
   }  
+
+
 }
 
 @media only screen and (min-width: 1040px) {
@@ -416,6 +429,28 @@ button img {
   .tech-marquee {
     margin: -47vh 0 -6vh 0;
   }
+
+  .project {
+    margin-top: 2.5vw;
+  }
+
+  .project-text {
+    width: 50%;
+    padding: 0;
+  }
+
+  .project-slider {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+  }
+
+  .slick-dots {
+    top: 25em;
+    position: absolute;
+  }
+
+
 
 
 }

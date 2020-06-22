@@ -24,26 +24,27 @@ const Project = ( props ) => {
     infinite: false
   };
 
-  //Custom hook
+    
+  //Custom hook to listen to resize and update iframe dimensions
   function useWindowSize() {
-    const [size, setSize] = useState([0, 0]);
+    const [ size , setSize ] = useState([0, 0]);
+    const [ iframeSize, setIframeSize ] = useState([10,10]);
     useLayoutEffect(() => {
       function updateSize() {
         setSize([window.innerWidth, window.innerHeight]);
+        var imageElement = document.getElementsByClassName('slider-image')[0]
+        setIframeSize([imageElement.width , imageElement.height])
       }
       window.addEventListener('resize', updateSize);
       updateSize();
-      console.log("window resized")
       return () => window.removeEventListener('resize', updateSize);
     }, []);
-    return size;
+    return iframeSize;
   }
 
-  const [width, height ] = useWindowSize()
-  
+  const [iframeWidth, iframeHeight ] = useWindowSize()
 
 
-  
   for (let i = 0; i < imageUrls.length; i++) {
     urls.push({ key: i , value: `${imageUrls[i]}` })
   }
@@ -61,8 +62,8 @@ const Project = ( props ) => {
   const youtubeDemo = () => {
     if (typeof youtubeUrl !== 'undefined') return(
         <iframe ref={ iFrameElement } 
-                width={ width }
-                height={ width / 1.6 }
+                width={ iframeWidth }
+                height={ iframeHeight }
                 className="slider-video" 
                 volume="0" 
                 src={ `${youtubeUrl}?autoplay=0&controls=0"&modestbranding=1` } 
@@ -90,15 +91,14 @@ const Project = ( props ) => {
 
 
   return (
-    <div className="drop-shadow m-top-10vw project" style={{ background: "rgba(66,72,94, 0.4)"  }}>
-      <Slider {...sliderSettings}>
-
-        { youtubeDemo() }
-
+    <div className="project" style={{ background: "rgba(66,72,94, 0.4)"  }}>
+      <div className="project-slider">
+        <Slider {...sliderSettings}>
         { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
-        
-      </Slider>
-      <div className="p-all-10vw">
+        { youtubeDemo() }
+        </Slider>
+      </div>
+      <div className="project-text">
         <p style={{ color: "#fff" }}>
           { writeUpText.map( ( word ) => { 
             return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` }) 
@@ -106,7 +106,6 @@ const Project = ( props ) => {
         </p>
           { urlButton() }
           { githubButton() }
-
       </div>
     </div>
   )
