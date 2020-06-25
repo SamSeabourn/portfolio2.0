@@ -35,17 +35,17 @@ const Project = ( props ) => {
     useLayoutEffect(() => {
       function updateSize() {
         setSize([window.innerWidth, window.innerHeight]);
-        var imageElement = document.getElementsByClassName('slider-image')[0]
-        setIframeSize([imageElement.width , imageElement.height])
+        // var imageElement = document.getElementsByClassName('slider-image')[0]
+        // setIframeSize([imageElement.width , imageElement.height])
       }
       window.addEventListener('resize', updateSize);
       updateSize();
       return () => window.removeEventListener('resize', updateSize);
     }, []);
-    return iframeSize;
+    return size;
   }
 
-  const [iframeWidth, iframeHeight ] = useWindowSize()
+  const [size ] = useWindowSize()
 
 
   for (let i = 0; i < imageUrls.length; i++) {
@@ -60,29 +60,29 @@ const Project = ( props ) => {
     if (typeof githubUrl !== 'undefined') return <Button linkText="Github" linkUrl={ githubUrl } icon={ GithubIcon2 } />
   }
 
-  const youtubeDemo = () => {
-    if (typeof youtubeUrl !== 'undefined') return(
-        <iframe ref={ iFrameElement } 
-                width={ iframeWidth }
-                height={ iframeHeight }
-                className="slider-video" 
-                volume="0" 
-                src={ `${youtubeUrl}?autoplay=0&controls=0"&modestbranding=1` } 
-                >
-        </iframe>
-    )
-  }
+  // const youtubeDemo = () => {
+  //   if (typeof youtubeUrl !== 'undefined') return(
+  //       <iframe ref={ iFrameElement } 
+  //               width={ iframeWidth }
+  //               height={ iframeHeight }
+  //               className="slider-video" 
+  //               volume="0" 
+  //               src={ `${youtubeUrl}?autoplay=0&controls=0"&modestbranding=1` } 
+  //               >
+  //       </iframe>
+  //   )
+  // }
 
-  const setIframeSize = (element) => {
-    if (element != null) {
-      element.height = imgElement.current.height;
-      element.width = imgElement.current.width;
-    }
+  // const setIframeSize = (element) => {
+  //   if (element != null) {
+  //     element.height = imgElement.current.height;
+  //     element.width = imgElement.current.width;
+  //   }
 
-    if (imgElement.current.width > 631 ) { // 639 is half minimum screen size
+  //   if (imgElement.current.width > 631 ) { // 639 is half minimum screen size
 
-    }
-  }
+  //   }
+  // }
 
   const guid = () => {  //React warning says that eveything needs a key as it could be breaking in the future
     function _p8(s) {  
@@ -92,25 +92,80 @@ const Project = ( props ) => {
     return _p8() + _p8(true) + _p8(true) + _p8();  
   } 
 
-  return (
-    <div ref={projectContainer} className="project" style={{ background: "rgba(66,72,94, 0.4)" }}>
-      <div className="project-slider">
-        <Slider {...sliderSettings}>
-          { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
-          { youtubeDemo() }
-        </Slider>
-      </div>
-      <div className="project-text" onLoad={ () => setIframeSize( iFrameElement.current ) }>
-        <p style={{ color: "#fff" }}>
-          { writeUpText.map( ( word ) => { 
-            return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` }) 
-          }
-        </p>
-        <div className="button-container">
-          { urlButton() }
-          { githubButton() }
+  // return (
+  //   <div ref={projectContainer} className="project" style={{ background: "rgba(66,72,94, 0.4)" }}>
+  //     <div className="project-slider">
+  //       <Slider {...sliderSettings}>
+  //         { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
+  //         { youtubeDemo() }
+  //       </Slider>
+  //     </div>
+  //     <div className="project-text" onLoad={ () => setIframeSize( iFrameElement.current ) }>
+  //       <p style={{ color: "#fff" }}>
+  //         { writeUpText.map( ( word ) => { 
+  //           return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` }) 
+  //         }
+  //       </p>
+  //       <div className="button-container">
+  //         { urlButton() }
+  //         { githubButton() }
+  //       </div>
+  //     </div>
+  //   </div>
+  // )
+
+  const view = () => {
+    if (size >= 1280) {
+      return (
+        //Big Screen
+        <div className="project-columns">
+        <div className="project-text">
+          <h7> BIG SCREEN { size }</h7>
+          <p style={{ color: "#fff" }}>
+            { writeUpText.map( ( word ) => { return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` })}
+          </p>
+          <section style={{ textAlign: "left" , margin: "0em 2em 0em -0.5em"}} >
+            { githubButton() }
+            { urlButton() }
+          </section>
+        </div>
+        <div className="slider-images">
+          <Slider {...sliderSettings}>
+            { urls.map( ( url ) => { return <img ref={ imgElement } src={ url.value } key={ guid() }></img> }) }
+          </Slider>
         </div>
       </div>
+      )
+    } else {
+      return (
+        //Little Screen
+        <div className="project-columns">
+          <div className="slider-images">
+            <h7> BIG SCREEN { size }</h7>
+            <Slider {...sliderSettings}>
+              { urls.map( ( url ) => { return <img ref={ imgElement } src={ url.value } key={ guid() }></img> }) }
+            </Slider>
+          </div>
+          <div className="project-row ">
+            <p className="project-text" style={{ color: "#fff" }}>
+              { writeUpText.map( ( word ) => { return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` })}
+            </p>
+            <section style={{ margin: "0 0 3em 0" }}>
+              { githubButton() }
+              { urlButton() }
+            </section>   
+        </div>
+      </div>
+      )
+    }
+  }
+
+
+
+  // Mobile
+  return (
+    <div ref={projectContainer} className="project" style={{ background: "rgba(66,72,94, 0.4)" }}>
+      {view()}
     </div>
   )
 }

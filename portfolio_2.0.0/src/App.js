@@ -5,7 +5,6 @@ import HeroPanel from './components/HeroPanel';
 import ProjectsPanel from './components/ProjectPanel';
 import create from 'zustand'
 import Footer from './components/Footer';
-import BottomLinks from './components/BottomLinks';
 
 
 
@@ -20,14 +19,17 @@ import BottomLinks from './components/BottomLinks';
 //   )
 // }
 
+//       <BottomLinks />
+
 function App() {
   return (
     <div className="App">
-      <TitlePanel/>
-      <HeroPanel />
-      <ProjectsPanel />
-      <BottomLinks />
-      <Footer />
+      <div className="content">
+        <TitlePanel/>
+        <HeroPanel />
+        <ProjectsPanel />
+        <Footer />
+      </div>
     </div>
   );
 }

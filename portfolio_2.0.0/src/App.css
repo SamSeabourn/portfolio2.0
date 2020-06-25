@@ -25,6 +25,7 @@ p {
 }
 
 
+
 button {
   height: 3em;
   font-weight: bold;
@@ -59,18 +60,6 @@ button img {
 .app {
   width: 100%;
   margin: 0%;
-}
-
-.bottom-links img {
-  margin: 0 1vw;
-  height: 10vw;
-  transition: 550ms ease-in-out;
-  
-}
-
-.bottom-links img:hover {
-  transform: scale(1.1);
-  transition: 150ms ease-in-out;
 }
 
 .slick-dots li button:before {
@@ -150,19 +139,31 @@ button img {
 
 .project-panel {
   text-align: center;
-  padding: 10vw 0;
+  padding: 3em 0;
 }
 
 .project {
   position: relative; 
   z-index: 20;
-  /* height: 200vw; */
   -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
   box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
   margin-top: 10vw;
 }
 
+
+.project-columns {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.project-columns div {
+}
+
+/* .slider-image {
+  width: 100vw;
+}  */
 
 .center-text {
   text-align: center;
@@ -228,10 +229,10 @@ button img {
 }
 
 .bottom-splash {
-  width: 232vw;
-    position: relative;
-    bottom: -4px;
-    right: 25em;
+  width: 175vw;
+  position: relative;
+  bottom: -9em;
+  right: 25em;
 }
 
 .portrait {
@@ -240,9 +241,11 @@ button img {
   margin: 0 0 0 0;
 }
 
-.bottom-links {
+.bottom-link-icon {
+  height: 3em;
+  margin: 2.5em 0.5em;
+  top: 4em;
   position: relative;
-  z-index: 30;
 }
 
 .iframe-vid {
@@ -344,9 +347,9 @@ button img {
     height: 23em;
   }
 
-  .project {
+  /* .project {
     height: 108vw;
-  }
+  } */
 }
 
 
@@ -393,13 +396,13 @@ button img {
 
 
   h1,h2 {
-    font-size: 8vh;
+    font-size: 3em;
     text-align: left;
-    margin: 0 7vw;
+    margin: 0px 10vh;
   }
 
   p {
-    font-size: 2.5vh;
+    font-size: 1.1em;
     text-align: left;
   }
 
@@ -410,66 +413,150 @@ button img {
     stroke-width: 1px;
   }
   .sam-logo {
-    margin: 23vh 0vh 0vh 14vh;
-    height: 26vh;
+    margin: 12em 0em 0em 10vh;
+    height: 11em;
   }
   .top-splash {
-    height: 30vw;
-    margin: -47vw 0vw 1vw 42vw;
-    height: 59vw;
+    margin: -35em 0em 1em 34em;
+    height: 46em;
   }
 
   .hero-panel {
-    padding: 6vw 0;
+    padding: 6em 0em 3em;
   }
 
   .hero-panel-text {
-    margin: 1vw 7vw;
-    width: 45vw;
+    margin: 1em 10vh;
+    width: 29em;
   }
 
   .portrait {
-    height: 42vh;
+    height: 20em;
     width: auto;
-    left: 47vh;
-    top: -44vh;
+    left: 19em;
+    top: -21em;
   }
 
   .tech-marquee {
-    margin: -47vh 0 -6vh 0;
-  }
-
-  .project {
-    margin-top: 2.5vw;
-  }
-
-  .project-text {
-    width: 33%;
-    padding: 0;
-  }
-
-  .project-slider {
-    width: 50%;
-    position: absolute;
-    left: 50%;
+    margin: -23em 0 -4em 0px;
   }
 
   .slick-dots {
-    bottom: 0em;
+    bottom: 1em;
   }
 
   .slick-dots li button:before {
     color: gray;
   }
 
+  .project {
+    margin-top: 3em;
+  }
 
+  .project-columns {
+    display: flex;
+    flex-direction: row;
+  }
 
+  .project-columns div {
+    width: 50vw;
+  }
+
+  .project-text {
+    padding: 2em 6em 0em 10vh;
+  }
+
+  .footer-panel {
+    margin-top: -25em;
+    position: relative;
+    bottom: 0px;
+  }
+
+  .bottom-splash {
+    width: 72em;
+    bottom: -12em;
+    right: 18em;
+}
+
+  .bottom-link-icon {
+    height: 4em;
+    padding: 1em;
+    bottom: 5em;
+    position: relative;
+    /* transition: ease-in 50ms; */
+    opacity: 90%;
+  }
+
+  .bottom-link-icon:hover {
+    opacity: 100%;
+    /* transition: ease-in 100ms; */
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+    .top-splash {
+      margin: -35em 0em 1em 45em;
+      height: 46em;
+  }
+
+  .portrait {
+    height: 20em;
+    width: auto;
+    left: 29em;
+    top: -21em;
+  }
+
+  .slider-images {
+    position: relative;
+    /* bottom: -0.18em; */
+  }
+}
+
+@media only screen and (min-width: 1536px) {
+    .top-splash {
+      margin: -36em 0em 1em 45em;
+      height: 45em;
+    }
+
+    .portrait {
+      height: 20em;
+      width: auto;
+      left: 31em;
+      top: -20em;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+
+  .content {
+    max-width: 1980px;
+    margin:  auto;
+  }
+
+  .hero-panel {
+    padding: 6em 0em 3em;
+}
+
+  .sam-logo {
+    margin: 16em 0em 0em 8em;
+    height: 18em;
+  }
+
+  .top-splash {
+    margin: -63em 0em 1em 53em;
+    height: 77em;
+  }
+
+  .portrait {
+    height: 20em;
+    width: auto;
+    left: 41em;
+    top: -21em;
+  }
+
+  .project-columns div {
+    width: 890px;
+  }
 
 
 }
-
-/* @media only screen and (min-width: 1920px) {
-
-
-
-} */
