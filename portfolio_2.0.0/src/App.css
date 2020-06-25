@@ -25,7 +25,6 @@ p {
 }
 
 
-
 button {
   height: 3em;
   font-weight: bold;
@@ -393,16 +392,26 @@ button img {
 /* DESKTOPS */
 
 @media only screen and (min-width: 1280px) {
+  .slider-images {
+    position: relative;
+    bottom: -2px;
+  }
 
-
+  button {
+    height: 3em;
+    border-radius: 3em;
+    font-size: 1em;
+    padding: 0em 1em;
+  }
+  
   h1,h2 {
-    font-size: 3em;
+    font-size: 4em;
     text-align: left;
-    margin: 0px 10vh;
+    margin: 0px 1.3em;
   }
 
   p {
-    font-size: 1.1em;
+    font-size: 1.5em;
     text-align: left;
   }
 
@@ -413,7 +422,7 @@ button img {
     stroke-width: 1px;
   }
   .sam-logo {
-    margin: 12em 0em 0em 10vh;
+    margin: 12em 0em 0em 5em;
     height: 11em;
   }
   .top-splash {
@@ -426,19 +435,19 @@ button img {
   }
 
   .hero-panel-text {
-    margin: 1em 10vh;
+    margin: 1em 3.6em;
     width: 29em;
   }
 
   .portrait {
-    height: 20em;
+    height: 23em;
     width: auto;
-    left: 19em;
-    top: -21em;
+    left: 28em;
+    top: -24em;
   }
 
   .tech-marquee {
-    margin: -23em 0 -4em 0px;
+    margin: -26em 0 -4em 0px;
   }
 
   .slick-dots {
@@ -463,7 +472,8 @@ button img {
   }
 
   .project-text {
-    padding: 2em 6em 0em 10vh;
+    padding: 2em 6em 0em 6.8em;
+    font-size: 0.8em;
   }
 
   .footer-panel {
@@ -500,16 +510,13 @@ button img {
   }
 
   .portrait {
-    height: 20em;
+    height: 24em;
     width: auto;
     left: 29em;
-    top: -21em;
+    top: -25em;
   }
 
-  .slider-images {
-    position: relative;
-    /* bottom: -0.18em; */
-  }
+
 }
 
 @media only screen and (min-width: 1536px) {
@@ -519,10 +526,10 @@ button img {
     }
 
     .portrait {
-      height: 20em;
+      height: 23em;
       width: auto;
       left: 31em;
-      top: -20em;
+      top: -24em;
   }
 }
 
@@ -531,11 +538,31 @@ button img {
   .content {
     max-width: 1980px;
     margin:  auto;
+    -webkit-box-shadow: 0px 0px 96px 42px rgba(0,0,0,0.62);
+    -moz-box-shadow: 0px 0px 96px 42px rgba(0,0,0,0.62);
+    box-shadow: 0px 0px 96px 42px rgba(0,0,0,0.62)
   }
+
+  h1,h2 {
+    font-size: 4em;
+    text-align: left;
+    margin: 0px 1.9em;
+  }
+
+  p {
+    font-size: 1.5em;
+    text-align: left;
+  }
+
 
   .hero-panel {
     padding: 6em 0em 3em;
-}
+  }
+
+  .hero-panel-text {
+    margin: 1em 5.2em;
+    width: 29em;
+  }
 
   .sam-logo {
     margin: 16em 0em 0em 8em;
@@ -548,15 +575,27 @@ button img {
   }
 
   .portrait {
-    height: 20em;
+    height: 23em;
     width: auto;
-    left: 41em;
-    top: -21em;
+    left: 40em;
+    top: -24em;
   }
 
   .project-columns div {
     width: 890px;
   }
+
+  .project-text {
+    padding: 2em 6em 0em 9.8em;
+    font-size: 0.8em;
+}
+
+  .tech-marquee {
+    margin: -23em 0 -4em 0px;
+  }
+
+
+
 
 
 }

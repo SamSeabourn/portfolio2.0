@@ -120,7 +120,6 @@ const Project = ( props ) => {
         //Big Screen
         <div className="project-columns">
         <div className="project-text">
-          <h7> BIG SCREEN { size }</h7>
           <p style={{ color: "#fff" }}>
             { writeUpText.map( ( word ) => { return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` })}
           </p>
@@ -138,10 +137,9 @@ const Project = ( props ) => {
       )
     } else {
       return (
-        //Little Screen
+
         <div className="project-columns">
           <div className="slider-images">
-            <h7> BIG SCREEN { size }</h7>
             <Slider {...sliderSettings}>
               { urls.map( ( url ) => { return <img ref={ imgElement } src={ url.value } key={ guid() }></img> }) }
             </Slider>

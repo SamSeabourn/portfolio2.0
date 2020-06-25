@@ -13,11 +13,6 @@ import demoGBImage1 from '../images/work_images/demo_gb1.jpg'
 import demoGBImage2 from '../images/work_images/demo_gb2.jpg'
 import demoGBImage3 from '../images/work_images/demo_gb3.jpg'
 
-
-
-
-
-
 const MyWorkPanel = () => {
     return (
         <div className="project-panel" style={{ background: '#202536' }}>
@@ -33,7 +28,7 @@ const MyWorkPanel = () => {
             writeUp={
               "Slinky is a Chrome Extension designed to manage and search though bookmarks with hotkeys and hashtags. This application is built with React using a custom webpack and utilizes Firebase live database and Anoynmous authentication to deliver a faster alternative to bookmarking pages."}
             />
-
+            
             <Project
             projectName={ "ExactDocs" }
             linkText={"ExactDocs.com"}
@@ -55,7 +50,6 @@ const MyWorkPanel = () => {
             writeUp={
               "DemoGB allows indy GameBoy game developers to updload and try each other's creations on a 3D css GameBoy in the browser. This app was built in just over a week and utlises Server Side Rendering with Express and was build with Node.js, Mongo.DB "}
             />
-
         </div>
     )
 }

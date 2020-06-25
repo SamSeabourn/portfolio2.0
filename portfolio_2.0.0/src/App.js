@@ -23,7 +23,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ background: "rgb(39, 43, 51)"}}>
       <div className="content">
         <TitlePanel/>
         <HeroPanel />
