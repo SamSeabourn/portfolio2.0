@@ -256,8 +256,6 @@ button img {
 
 .slider-video {
   border: none;
-  /* width: 100%; */
-  /* height: 100%; */
 }
 
 .ytp-show-cards-title {
@@ -339,16 +337,11 @@ button img {
 }
 
 /* MOBLIES DEVICES */
-
 @media only screen and (min-width: 440px) {
   .top-splash {
     margin: -7vw 0em 10vw 10em;
     height: 23em;
   }
-
-  /* .project {
-    height: 108vw;
-  } */
 }
 
 
@@ -493,13 +486,11 @@ button img {
     padding: 1em;
     bottom: 5em;
     position: relative;
-    /* transition: ease-in 50ms; */
     opacity: 90%;
   }
 
   .bottom-link-icon:hover {
     opacity: 100%;
-    /* transition: ease-in 100ms; */
   }
 }
 
@@ -515,7 +506,6 @@ button img {
     left: 29em;
     top: -25em;
   }
-
 
 }
 
@@ -591,11 +581,6 @@ button img {
 }
 
   .tech-marquee {
-    margin: -23em 0 -4em 0px;
+    margin: -29em 0 -4em 0px;
   }
-
-
-
-
-
 }
