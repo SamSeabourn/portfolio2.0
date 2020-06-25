@@ -51,9 +51,9 @@ const MyWorkPanel = () => {
             githubUrl={"https://github.com/SamSeabourn/Slinky"}
             imageUrls={ [demoGBImage1, demoGBImage2, demoGBImage3] }
             youtubeUrl={ "https://www.youtube.com/embed/5S6PauVO7To" }
-            keyWords={ ["Mongo.DB,", "Node.js,", "Express,",""  ] }
+            keyWords={ ["Mongo.DB", "Node.js,", "Express,", "Server", "Side", "Rendering"] }
             writeUp={
-              "DemoGB is a platform to allow people to share their own demos and trial games that other developers had made. This app demonstrates a JavaScript Gameboy emulator running in the browser and the ability to upload, mount and play .gb files from blob storage. This app was built in just over a week using Node.js, Express, Mongo.DB, Bcrypt and Cloudinary. As part of this project I built and published a a short game playable on the site as well as on the original 1989 hardware."}
+              "DemoGB allows indy GameBoy game developers to updload and try each other's creations on a 3D css GameBoy in the browser. This app was built in just over a week and utlises Server Side Rendering with Express and was build with Node.js, Mongo.DB "}
             />
 
         </div>

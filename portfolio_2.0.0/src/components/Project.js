@@ -78,14 +78,10 @@ const Project = ( props ) => {
       element.height = imgElement.current.height;
       element.width = imgElement.current.width;
     }
-    if (imgElement.current.width < 1280) {
-      projectContainer.current.style.height = `${imgElement.current.height * 2.3}px` 
+
+    if (imgElement.current.width > 631 ) { // 639 is half minimum screen size
+
     }
-    else
-    {
-      projectContainer.current.style.height = `${imgElement.current.height}px` 
-    }
-    
   }
 
   const guid = () => {  //React warning says that eveything needs a key as it could be breaking in the future
@@ -97,7 +93,7 @@ const Project = ( props ) => {
   } 
 
   return (
-    <div ref={projectContainer} className="project" style={{ background: "rgba(66,72,94, 0.4)", height: iframeHeight  }}>
+    <div ref={projectContainer} className="project" style={{ background: "rgba(66,72,94, 0.4)" }}>
       <div className="project-slider">
         <Slider {...sliderSettings}>
           { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
