@@ -24,7 +24,7 @@ const MyWorkPanel = (props) => {
             youtubeUrl={ "https://www.youtube.com/embed/CtrtrZHS5q8" }
             keyWords={ ["Firebase", "React", "Slinky", "Chrome", "Extension" ] }
             writeUp={
-              "Slinky is a Chrome Extension designed to manage and search though bookmarks with hotkeys and hashtags. This application is built with React using a custom webpack and utilizes Firebase live database and Anoynmous authentication to deliver a faster alternative to bookmarking pages."}
+              "Slinky is a Chrome Extension designed to manage and search though bookmarks with hotkeys and hashtags. This application is built with React using a custom webpack and utilizes Firebase's live database and Anoynmous authentication to deliver a faster alternative to vanilla bookmarking."}
           />
             
           <Project

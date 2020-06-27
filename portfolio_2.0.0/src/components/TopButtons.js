@@ -1,6 +1,6 @@
 import React from 'react';
 import MoonIcon from '../images/icons/icon_moon.svg';
-import SunIcon from '../images/icons/icon_sun_dark.svg';
+import SunIcon from '../images/icons/icon_sun.svg';
 
 const TopButtons =  ( props ) => {
     const icon = props.nightMode?  SunIcon : MoonIcon

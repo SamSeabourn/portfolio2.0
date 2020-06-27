@@ -40,7 +40,7 @@ const Footer = (props) => {
       <div style={{  position: "relative", zIndex: "30", bottom: "3em", textAlign: "center"}}>
         <img className="bottom-link-icon" alt={ githubIcon } onClick={ openGithub } src={ githubIcon }></img>
         <img className="bottom-link-icon" alt={ linkedinIcon } onClick={ openLinkedin } src={ linkedinIcon }></img>
-        <img className="bottom-link-icon" alt={ resumeIcon }  src={ resumeIcon }></img>
+        <img className="bottom-link-icon" alt={ resumeIcon } style={{ display: "none" }} src={ resumeIcon }></img>
       </div>
      
     </div>
