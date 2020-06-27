@@ -6,7 +6,7 @@ import GithubIcon2 from '../images/icons/icon_github2.svg'
 import LinkIcon from '../images/icons/icon_url.svg'
 
 const Project = ( props ) => {
-  const { imageUrls, writeUp, keyWords, githubUrl, linkText, linkUrl, youtubeUrl } = props;
+  const { imageUrls, writeUp, keyWords, projectName, githubUrl, linkText, linkUrl, youtubeUrl } = props;
 
   const urls = [];
   const writeUpText = writeUp.split(' ');
@@ -92,22 +92,24 @@ const Project = ( props ) => {
       return (
         //Big Screen
         <div className="project-columns">
-        <div className="project-text">
-          <p style={{ color: "#fff" }}>
-            { writeUpText.map( ( word ) => { return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` })}
-          </p>
-          <section style={{ textAlign: "left" , margin: "0em 2em 0em -0.5em"}} >
-            { githubButton() }
-            { urlButton() }
-          </section>
+          <div className="project-text">
+            <h2 className="project-title"> { projectName } </h2>
+            <p style={{ color: "#fff" }}>
+              
+              { writeUpText.map( ( word ) => { return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` })}
+            </p>
+            <section style={{ textAlign: "left" , margin: "0em 2em 0em -0.5em"}} >
+              { githubButton() }
+              { urlButton() }
+            </section>
+          </div>
+          <div className="slider-images">
+            <Slider {...sliderSettings}>
+              { urls.map( ( url ) => { return <img ref={ imgElement } onLoad={ () =>  setIframeSize( iFrameElement.current ) } className="slider-image" src={ url.value } key={ guid() }></img> }) }
+              { youtubeDemo() }
+            </Slider>
+          </div>
         </div>
-        <div className="slider-images">
-          <Slider {...sliderSettings}>
-            { urls.map( ( url ) => { return <img ref={ imgElement } onLoad={ () =>  setIframeSize( iFrameElement.current ) } className="slider-image" src={ url.value } key={ guid() }></img> }) }
-            { youtubeDemo() }
-          </Slider>
-        </div>
-      </div>
       )
     } else {
       return (

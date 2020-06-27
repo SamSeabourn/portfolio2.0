@@ -63,6 +63,7 @@ button img {
 
 .slick-dots li button:before {
   color: white;
+  font-size: 15px;
 }
 
 .text-gradient {
@@ -247,12 +248,6 @@ button img {
   position: relative;
 }
 
-.iframe-vid {
-  height: 100%;
-  display: block;
-  width: 100%;
-  background-color: red;
-}
 
 .slider-video {
   border: none;
@@ -391,9 +386,9 @@ button img {
   }
 
   button {
-    height: 3em;
-    border-radius: 3em;
-    font-size: 1em;
+    height: 2.6em;
+    border-radius: 2.6em;
+    font-size: 1.5em;
     padding: 0em 1em;
   }
   
@@ -425,6 +420,7 @@ button img {
 
   .hero-panel {
     padding: 6em 0em 3em;
+    margin: 0 0 3em 0;
   }
 
   .hero-panel-text {
@@ -492,13 +488,21 @@ button img {
   .bottom-link-icon:hover {
     opacity: 100%;
   }
+
+  .project-title {
+    text-align: left;
+    color: rgba(0,0,0,0);
+    margin: 0.2em 0em 0.5em 0em ;
+    font-size: 5em;
+    -webkit-text-stroke: 2px rgba(251,120,47,1);
+  }
 }
 
 @media only screen and (min-width: 1440px) {
     .top-splash {
       margin: -35em 0em 1em 45em;
       height: 46em;
-  }
+    }
 
   .portrait {
     height: 24em;
@@ -506,7 +510,6 @@ button img {
     left: 29em;
     top: -25em;
   }
-
 }
 
 @media only screen and (min-width: 1536px) {
@@ -540,7 +543,7 @@ button img {
   }
 
   p {
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: left;
   }
 
@@ -550,7 +553,7 @@ button img {
   }
 
   .hero-panel-text {
-    margin: 1em 5.2em;
+    margin: 1em 3.9em;
     width: 29em;
   }
 
@@ -578,7 +581,7 @@ button img {
   .project-text {
     padding: 2em 6em 0em 9.8em;
     font-size: 0.8em;
-}
+  }
 
   .tech-marquee {
     margin: -29em 0 -4em 0px;

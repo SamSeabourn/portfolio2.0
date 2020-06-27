@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 
 
 
+
 // function Counter() {
 //   const { count, inc, dec} = useStore()
 //   return (
@@ -23,7 +24,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App" style={{ background: "rgb(39, 43, 51)"}}>
+    <div className="App" style={{ background: "rgb(28, 33, 48)"}}>
       <div className="content">
         <TitlePanel/>
         <HeroPanel />
