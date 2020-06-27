@@ -1,10 +1,6 @@
 import React from 'react';
-import create from 'zustand';
 import MoonIcon from '../images/icons/icon_moon.svg';
 import SunIcon from '../images/icons/icon_sun.svg';
-
-
-
 
 const TopButtons =  ( props ) => {
     return (  

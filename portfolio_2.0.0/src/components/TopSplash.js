@@ -16,7 +16,7 @@ const TopSplash = () => {
     var uncolored = 0
     for (let i = 0; i < allTiles.length; i++) {
       const tile = allTiles[i]
-      if (tile.dataset.color == 0)
+      if (tile.dataset.color === 0)
       uncolored++
     }
     if (uncolored == 0) {

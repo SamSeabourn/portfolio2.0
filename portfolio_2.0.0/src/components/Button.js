@@ -9,7 +9,7 @@ const Button = ( props ) => {
 
   return(
     <button onClick={ openUrl }>
-      <img src={ icon }></img>
+      <img alt={ icon } src={ icon }></img>
       { linkText } 
     </button>
   )

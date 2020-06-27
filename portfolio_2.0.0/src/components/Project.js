@@ -1,9 +1,52 @@
-import React, { useLayoutEffect, useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Button from './Button'
 import Slider from 'react-slick'
-
 import GithubIcon2 from '../images/icons/icon_github2.svg'
 import LinkIcon from '../images/icons/icon_url.svg'
+
+const setTitleColor = (nightMode) => {
+  if (nightMode) {
+    return { 
+      color: "#fff", 
+      transition: "0.5s ease-in",
+    }
+  } else {
+    return { 
+      color: "rgb(32, 37, 54)", 
+      transition: "0.5s ease-in"
+    }
+  }
+}
+
+const setTextColor = (nightMode) => {
+  if (nightMode) {
+    return { 
+      color: "#fff", 
+      transition: "0.5s ease-in"
+    }
+  } else {
+    return { 
+      color: "rgba(32, 37, 54)", 
+      transition: "0.5s ease-in"
+    }
+  }
+}
+
+const setBackgroundColor = (nightMode) => {
+  console.log(nightMode)
+  if (nightMode) {
+    return { 
+      background: "rgba(32,37,54,0.5)", 
+      transition: "0.5s ease-in"
+    }
+  } else {
+    return { 
+      background: "rgba(255,255,255,0.8)", 
+      transition: "0.5s ease-in"
+    }
+  }
+}
+
 
 const Project = ( props ) => {
   const { imageUrls, writeUp, keyWords, projectName, githubUrl, linkText, linkUrl, youtubeUrl } = props;
@@ -51,11 +94,11 @@ const Project = ( props ) => {
   }
 
   const urlButton = () => {
-    if (typeof linkUrl !== 'undefined') return <Button linkText={ linkText } linkUrl={ linkUrl } icon={ LinkIcon } />
+    if (typeof linkUrl !== 'undefined') return <Button nightMode={ props.nightMode } linkText={ linkText } linkUrl={ linkUrl } icon={ LinkIcon } />
   }
 
   const githubButton = () => {
-    if (typeof githubUrl !== 'undefined') return <Button linkText="Github" linkUrl={ githubUrl } icon={ GithubIcon2 } />
+    if (typeof githubUrl !== 'undefined') return <Button nightMode={ props.nightMode } linkText="Github" linkUrl={ githubUrl } icon={ GithubIcon2 } />
   }
 
   const youtubeDemo = () => {
@@ -93,9 +136,8 @@ const Project = ( props ) => {
         //Big Screen
         <div className="project-columns">
           <div className="project-text">
-            <h2 className="project-title"> { projectName } </h2>
-            <p style={{ color: "#fff" }}>
-              
+            <h2 className="project-title" style={ setTitleColor(props.nightMode) }> { projectName } </h2>
+            <p style={ setTextColor(props.nightMode) }>
               { writeUpText.map( ( word ) => { return keyWords.includes(word)? <strong key={ guid() } >{ `${word} ` }</strong> : `${word} ` })}
             </p>
             <section style={{ textAlign: "left" , margin: "0em 2em 0em -0.5em"}} >
@@ -122,7 +164,7 @@ const Project = ( props ) => {
             </Slider>
           </div>
           <div className="project-row " onLoad={ () =>  setIframeSize(iFrameElement.current) }>
-            <p className="project-text" style={{ color: "#fff" }}>
+            <p className="project-text" style={ setTextColor(props.nightMode) }>
               { writeUpText.map( ( word ) => { return keyWords.includes(word)? <strong key={ guid() } >{ `${ word } ` }</strong> : `${ word } ` })}
             </p>
             <section style={{ margin: "0 0 3em 0" }}>
@@ -137,7 +179,7 @@ const Project = ( props ) => {
   }
 
   return (
-    <div ref={ projectContainer } className="project" style={{ background: "rgba(66,72,94, 0.4)" }}>
+    <div ref={ projectContainer } className="project" style={ setBackgroundColor(props.nightMode) }>
       { view() }
     </div>
   )

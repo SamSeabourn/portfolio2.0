@@ -41,8 +41,6 @@ class TechMarquee extends Component {
 
   updateCardCount = () => {
     var windowWidth = window.innerWidth;
-    console.log('window width is')
-    console.log(windowWidth)
     if (windowWidth > 1278) {
       this.setState( { settings: {
         infinite: true,

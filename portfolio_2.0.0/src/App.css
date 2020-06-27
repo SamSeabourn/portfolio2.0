@@ -132,7 +132,6 @@ button img {
 }
 
 .hero-panel {
-  /* overflow: hidden; */
   text-align: center;
   padding: 10vw 0;
 }
@@ -143,15 +142,13 @@ button img {
 
 .project-panel {
   text-align: center;
-  padding: 3em 0;
+  padding: 3em 0em 0em 0em;
 }
 
 .project {
   position: relative; 
   z-index: 20;
-  -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
-  box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1), 0px -10px 15px rgba(0,0,0,0.1);
   margin-top: 10vw;
 }
 
@@ -164,10 +161,6 @@ button img {
 
 .project-columns div {
 }
-
-/* .slider-image {
-  width: 100vw;
-}  */
 
 .center-text {
   text-align: center;
@@ -386,9 +379,10 @@ button img {
 @media only screen and (min-width: 1280px) {
 
 
-  .slider-images {
-    position: relative;
-    bottom: -2px;
+  .slick-slide {
+    /* position: relative; */
+    margin-bottom: -4px;
+    margin-top: -4px;
   }
 
   .slick-dots li button:before {
@@ -502,10 +496,8 @@ button img {
 
   .project-title {
     text-align: left;
-    color: rgba(0,0,0,0);
     margin: 0.2em 0em 0.5em 0em ;
-    font-size: 5em;
-    -webkit-text-stroke: 2px rgba(251,120,47,1);
+    font-size: 4.5em;
   }
 }
 
@@ -542,9 +534,9 @@ button img {
   .content {
     max-width: 1980px;
     margin:  auto;
-    -webkit-box-shadow: 0px 0px 96px 42px rgba(0,0,0,0.62);
-    -moz-box-shadow: 0px 0px 96px 42px rgba(0,0,0,0.62);
-    box-shadow: 0px 0px 96px 42px rgba(0,0,0,0.62)
+    -webkit-box-shadow: 0px 0px 96px 42px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 96px 42px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 96px 42px rgba(0,0,0,0.1)
   }
 
   h1,h2 {
@@ -560,7 +552,7 @@ button img {
 
 
   .hero-panel {
-    padding: 6em 0em 3em;
+    padding: 6em 0em 0em;
   }
 
   .hero-panel-text {

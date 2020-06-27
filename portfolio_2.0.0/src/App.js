@@ -8,30 +8,35 @@ import create from 'zustand'
 import Footer from './components/Footer';
 
 const [useStore] = create(set => ({
-  nightMode: true,
+  nightMode: false,
   toggleNightMode: () => { set(state => ({ nightMode: !state.nightMode} )) }
 }))
 
-const setColors = (nightMode) => {
+const setColor = (nightMode) => {
   if (nightMode) {
-    return { background: "rgb(28, 33, 48)" }
+    return { 
+      background: "rgb(28, 33, 48)",
+      transition: "0.5s ease-in"
+    }
   } else {
-    return { background: "rgb(250, 250, 250)" }
+    return { 
+      background: "rgb(250, 250, 250)", 
+      transition: "0.5s ease-in"
+    }
   }
 }
 
 function App() {
   const nightMode  = useStore(state => state.nightMode);
   const toggleNightMode  = useStore(state => state.toggleNightMode);
-  const style = setColors(nightMode)
   return (
-    <div className="App" style={ setColors(nightMode) }>
+    <div className="App" style={ setColor( nightMode) }>
       <div className="content">
         <TitlePanel nightMode={ nightMode }/>
-        <HeroPanel />
-        <ProjectsPanel />
-        <Footer />
-        <TopButtons toggleNightMode={ toggleNightMode }/>
+        <HeroPanel nightMode={ nightMode }/>
+        <ProjectsPanel nightMode={ nightMode } />
+        <Footer nightMode={ nightMode } />
+        <TopButtons nightMode={ nightMode } toggleNightMode={ toggleNightMode }/>
       </div>
     </div>
   );

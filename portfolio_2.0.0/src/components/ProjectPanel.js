@@ -13,11 +13,27 @@ import demoGBImage1 from '../images/work_images/demo_gb1.jpg'
 import demoGBImage2 from '../images/work_images/demo_gb2.jpg'
 import demoGBImage3 from '../images/work_images/demo_gb3.jpg'
 
-const MyWorkPanel = () => {
+
+// const setColors = (nightMode) => {
+//   if (nightMode) {
+//     return { 
+//       background: "rgb(32, 37, 54)", 
+//       transition: "0.5s ease-in"
+//     }
+//   } else {
+//     return { 
+//       background: "rgba(255, 255, 255, 0.9)", 
+//       transition: "0.5s ease-in"
+//     }
+//   }
+// }
+
+const MyWorkPanel = (props) => {
     return (
-        <div className="project-panel" style={{ background: '#202536' }}>
+        <div className="project-panel" style={{ background: "rgba(0,0,0,0)"}}>
           <h2 className="text-gradient"> My Work.</h2>
           <Project
+            nightMode={ props.nightMode }
             projectName={ "Slinky" }
             linkText={"Chrome Web Store"}
             linkUrl={ "https://chrome.google.com/webstore/detail/oiabgomphebmcdglaoppphombggcdbpg/publish-accepted?authuser=0&hl=en-GB"}
@@ -27,9 +43,10 @@ const MyWorkPanel = () => {
             keyWords={ ["Firebase", "React", "Slinky", "Chrome", "Extension" ] }
             writeUp={
               "Slinky is a Chrome Extension designed to manage and search though bookmarks with hotkeys and hashtags. This application is built with React using a custom webpack and utilizes Firebase live database and Anoynmous authentication to deliver a faster alternative to bookmarking pages."}
-            />
+          />
             
-            <Project
+          <Project
+            nightMode={ props.nightMode }
             projectName={ "ExactDocs" }
             linkText={"ExactDocs.com"}
             linkUrl={ "https://exactdocs.com/"}
@@ -37,9 +54,10 @@ const MyWorkPanel = () => {
             keyWords={ ["ExactDocs", "C#", ".Net" ] }
             writeUp={
               "With ExactDocs you can centralize and control all of your document templates and use them to generate perfectly compliant and accurate documents every time. ExactDocs is built with Microsoft .Net in C# with has been undergoing continious product updates based on users feedback."}
-            />
+          />
 
-            <Project
+          <Project
+            nightMode={ props.nightMode }
             projectName={ "DemoGB" }
             linkText={"DemoGB"}
             linkUrl={ "https://exactdocs.com/"}
@@ -49,7 +67,7 @@ const MyWorkPanel = () => {
             keyWords={ ["Mongo.DB", "Node.js,", "Express,", "Server", "Side", "Rendering"] }
             writeUp={
               "DemoGB allows indy GameBoy game developers to updload and try each other's creations on a 3D css GameBoy in the browser. This app was built in just over a week and utlises Server Side Rendering with Express and was build with Node.js, Mongo.DB "}
-            />
+          />
         </div>
     )
 }
