@@ -39,7 +39,7 @@ const HeroPanel = (props) => {
           I believe that software should not only function well but <strong> feel great </strong> to use. 
           I love working with people to bring these type of experiences to the web.
         </p>
-        <img className="portrait" src={ Portrait } />
+        <img className="portrait" alt="Self portrait of a software engineer" src={ Portrait } />
         <TechMarquee />
       </div>
     );

@@ -14,20 +14,6 @@ import demoGBImage2 from '../images/work_images/demo_gb2.jpg'
 import demoGBImage3 from '../images/work_images/demo_gb3.jpg'
 
 
-// const setColors = (nightMode) => {
-//   if (nightMode) {
-//     return { 
-//       background: "rgb(32, 37, 54)", 
-//       transition: "0.5s ease-in"
-//     }
-//   } else {
-//     return { 
-//       background: "rgba(255, 255, 255, 0.9)", 
-//       transition: "0.5s ease-in"
-//     }
-//   }
-// }
-
 const MyWorkPanel = (props) => {
     return (
         <div className="project-panel" style={{ background: "rgba(0,0,0,0)"}}>

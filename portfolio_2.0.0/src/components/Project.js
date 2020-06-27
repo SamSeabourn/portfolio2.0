@@ -2,7 +2,9 @@ import React, { useLayoutEffect, useState } from 'react';
 import Button from './Button'
 import Slider from 'react-slick'
 import GithubIcon2 from '../images/icons/icon_github2.svg'
+import GithubIcon2Dark from '../images/icons/icon_github2_dark.svg'
 import LinkIcon from '../images/icons/icon_url.svg'
+import LinkIconDark from '../images/icons/icon_url_dark.svg'
 
 const setTitleColor = (nightMode) => {
   if (nightMode) {
@@ -33,7 +35,6 @@ const setTextColor = (nightMode) => {
 }
 
 const setBackgroundColor = (nightMode) => {
-  console.log(nightMode)
   if (nightMode) {
     return { 
       background: "rgba(32,37,54,0.5)", 
@@ -47,13 +48,10 @@ const setBackgroundColor = (nightMode) => {
   }
 }
 
-
 const Project = ( props ) => {
   const { imageUrls, writeUp, keyWords, projectName, githubUrl, linkText, linkUrl, youtubeUrl } = props;
-
   const urls = [];
   const writeUpText = writeUp.split(' ');
-
   const imgElement = React.useRef(null);
   const iFrameElement = React.useRef(null);
   const projectContainer = React.useRef(null)
@@ -94,23 +92,45 @@ const Project = ( props ) => {
   }
 
   const urlButton = () => {
-    if (typeof linkUrl !== 'undefined') return <Button nightMode={ props.nightMode } linkText={ linkText } linkUrl={ linkUrl } icon={ LinkIcon } />
+    if (typeof linkUrl !== 'undefined'){
+      return (
+        <Button 
+        nightMode={ props.nightMode } 
+        linkText={ linkText } 
+        linkUrl={ linkUrl } 
+        lightIcon={ LinkIcon } 
+        darkIcon={ LinkIconDark }
+        />
+      )
+    } 
   }
 
   const githubButton = () => {
-    if (typeof githubUrl !== 'undefined') return <Button nightMode={ props.nightMode } linkText="Github" linkUrl={ githubUrl } icon={ GithubIcon2 } />
+    if (typeof githubUrl !== 'undefined'){
+      return (
+        <Button 
+        nightMode={ props.nightMode } 
+        linkText="Github" 
+        linkUrl={ githubUrl } 
+        lightIcon={ GithubIcon2 } 
+        darkIcon={ GithubIcon2Dark }
+        />
+      ) 
+    } 
   }
 
   const youtubeDemo = () => {
     if (typeof youtubeUrl !== 'undefined') return(
-        <iframe ref={ iFrameElement } 
-                width={ iframeWidth }
-                height={ iframeHeight }
-                className="slider-video" 
-                volume="0" 
-                src={ `${youtubeUrl}?autoplay=0&controls=0"&modestbranding=1` } 
-                onLoad={ () => setIframeSize() }
-                >
+        <iframe 
+          ref={ iFrameElement } 
+          width={ iframeWidth }
+          height={ iframeHeight }
+          alt={ `link to ${ youtubeUrl }`}
+          title={youtubeUrl}
+          className="slider-video" 
+          volume="0" 
+          src={ `${youtubeUrl}?autoplay=0&controls=0"&modestbranding=1` } 
+          onLoad={ () => setIframeSize() }>
         </iframe>
     )
   }

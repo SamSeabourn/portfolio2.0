@@ -19,8 +19,7 @@ const TopSplash = () => {
       if (tile.dataset.color === 0)
       uncolored++
     }
-    if (uncolored == 0) {
-      console.log('we done here cuz')
+    if (uncolored === 0) {
     }
   }
 

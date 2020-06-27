@@ -24,7 +24,6 @@ p {
   font-size : 4vw;
 }
 
-
 button {
   height: 3em;
   font-weight: bold;
@@ -56,14 +55,35 @@ button img {
   margin-right: 0.5em;
 }
 
+#nightmodeButton {
+  height: 3em;
+  border: none;
+  width: 3em;
+  background:  rgba(225,9,175,1);
+  transition: 0.5s ease-in-out;
+  border-radius: 3em;
+  -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+}
+
+#nightmodeButton img {
+  position: relative;
+  width: 1em;
+}
+
 .app {
   width: 100%;
   margin: 0%;
 }
 
 .slick-dots li button:before {
-  color: white;
+  color: grey;
   font-size: 12px;
+}
+
+.slick-dots li button:focus, .slick-dots li button:hover {
+  box-shadow: none;
 }
 
 .text-gradient {
@@ -377,10 +397,27 @@ button img {
 /* DESKTOPS */
 
 @media only screen and (min-width: 1280px) {
+  .top-buttons {
+    position: absolute;
+    z-index: 120;
+    top: 0px;
+    left: 0px;
+  }
 
+  #nightmodeButton {
+    background-color: #fb782f;
+    height: 2em;
+    width: 2em;
+    border-radius: 1em;
+    padding: 0 0.5em;
+  }
+
+  #nightmodeButton img {
+    width: 1em;
+  }
 
   .slick-slide {
-    /* position: relative; */
+    /* slider not covering whole div for some reason */
     margin-bottom: -4px;
     margin-top: -4px;
   }
@@ -483,15 +520,15 @@ button img {
 }
 
   .bottom-link-icon {
-    height: 4em;
-    padding: 1em;
+    height: 3em;
+    padding: 0.5em;
     bottom: 5em;
     position: relative;
-    opacity: 90%;
+    opacity: 100%;
   }
 
   .bottom-link-icon:hover {
-    opacity: 100%;
+    opacity: 80%;
   }
 
   .project-title {
