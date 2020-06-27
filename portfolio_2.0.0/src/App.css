@@ -63,7 +63,7 @@ button img {
 
 .slick-dots li button:before {
   color: white;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .text-gradient {
@@ -84,19 +84,23 @@ button img {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e109af",endColorstr="#fb782f",GradientType=1);
 }
 
+.top-buttons {
+  position: absolute;
+  z-index: 120;
+  top: 0px;
+  right: 0px;
+}
+
 .marquee {
   width: 100vw;
   white-space: nowrap;
   overflow: hidden;
-  /* box-sizing: border-box; */
 }
 .marquee-content {
   text-align: unset;
   width: 800%;
   left: 10vw;
-  /* height: 6em; */
   display: flex;
-  /* padding-left: 100%; */
   animation: marquee 60s linear infinite;
 }
 
@@ -123,8 +127,8 @@ button img {
 }
 
 .top-splash {
-  margin: -12vw 0em 10vw 19vw;
-  height: 22em;
+  margin: -29vw 0em 10vw 8vw;
+  height: 28em;
 }
 
 .hero-panel {
@@ -380,9 +384,16 @@ button img {
 /* DESKTOPS */
 
 @media only screen and (min-width: 1280px) {
+
+
   .slider-images {
     position: relative;
     bottom: -2px;
+  }
+
+  .slick-dots li button:before {
+    color: white;
+    font-size: 15px;
   }
 
   button {
@@ -404,7 +415,7 @@ button img {
   }
 
   .flash {
-    animation: pulsate 2s infinite;
+    animation: pulsate 1.8s infinite;
     fill: rgba(0, 0, 0, 1);
     stroke: rgba(0, 0, 0, 1);
     stroke-width: 1px;

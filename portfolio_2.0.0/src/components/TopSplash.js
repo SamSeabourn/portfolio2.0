@@ -7,10 +7,24 @@ const TopSplash = () => {
   const changeTileColor = (e) => {
     var newClass = `f${e.target.dataset.face}c${selectedColor} paintable`
     e.target.setAttribute("class", newClass)
+    e.target.setAttribute("data-color", selectedColor)
+    checkForAllColored()
+  }
+
+  const checkForAllColored = () => {
+    var allTiles = document.getElementsByClassName('paintable')
+    var uncolored = 0
+    for (let i = 0; i < allTiles.length; i++) {
+      const tile = allTiles[i]
+      if (tile.dataset.color == 0)
+      uncolored++
+    }
+    if (uncolored == 0) {
+      console.log('we done here cuz')
+    }
   }
 
   const changeBrushSelection = (e) => {
-
     var color1Tin = document.getElementById('selectColor1')
     var color2Tin = document.getElementById('selectColor2')
     if (color1Tin != null && color2Tin != null ){
@@ -30,7 +44,7 @@ const TopSplash = () => {
       path.setAttribute("class", `selectedColor f1c${color}`)
     }
   }
-  // <svg className="top-splash" width="884.628" height="420.914" viewBox="0 0 884.628 420.914">
+
   return (
     <svg className="top-splash" viewBox="0 0 884.628 420.914">
     <defs>
@@ -159,286 +173,286 @@ const TopSplash = () => {
       <path d="M231.69,292.613a2.625,2.625,0,0,0-1.812-.27c.445.53.619,1.059.085,1.625-.249.4-1.5.312-1.371.873.53.81.873,1.652,1.808,1.4,1-.26,1.27-3.611,1.96-2.993A2.467,2.467,0,0,0,231.69,292.613Z" transform="translate(-0.172 0.1)" style={{ fill: "#3d332d", opacity: "0.56" }}/>
       <path d="M146.856,274.334c.066.038.066.1,0,.136l-2.706,1.573c-.065.038-.065.1,0,.136l.365.211c.09.052.048.143-.075.163l-2.68.421a.248.248,0,0,1-.162-.025c-.04-.023-.06-.057-.043-.093l.719-1.554c.034-.071.188-.1.28-.044l.366.211a.256.256,0,0,0,.235,0l2.706-1.572a.259.259,0,0,1,.236,0Z" transform="translate(-0.172 0.1)" style={{ fill: "#dcdcdc" }}/>
     </g>
-    <path d="M118.689,236.17l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.419,238.636l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.148,241.1l-4.27,2.466V248.5l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.714,253.429l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.984,250.963l-4.27,2.466v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.337,307.671l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.607,305.205l-4.27,2.466V312.6l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.985,300.274l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,297.809l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.525,295.343l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.876,292.878l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.147,290.412l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.417,287.947l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.687,285.481l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.876,287.947l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.876,283.015l-4.27,2.466v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.876,278.084l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.148,275.619l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,268.222l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,263.291l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,265.757l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,260.826l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.066,285.481l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.066,280.55l-4.27,2.465v4.932l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.066,275.619l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.066,270.688l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.066,265.757l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.337,263.291l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.608,260.826l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.8,253.429,84.525,255.9v4.931L88.8,258.36Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.066,250.963l-4.27,2.466v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.337,248.5l-4.271,2.465V255.9l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.879,258.36l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.149,255.9l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.876,273.153l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.147,270.688l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.417,268.222l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.687,265.757l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.958,263.291l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.958,268.222l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.958,273.153l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.958,278.084l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.958,283.015l-4.271,2.466v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,278.084l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,273.153l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,268.222l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,263.291l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,241.1l-4.27,2.466V248.5l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.419,243.567l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.148,246.032l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,246.032l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.419,248.5l-4.271,2.465V255.9l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.148,250.963l-4.27,2.466,4.27,2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,250.963l-4.27,2.466v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.419,253.429l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,255.9l-4.27,2.465,4.27,2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.9,305.205v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.173,302.74l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.444,300.274l-4.271,2.466,4.271,2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,283.015l-4.271,2.466,4.271,2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.417,273.153l-4.27,2.466,4.27,2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.147,280.55l4.27-2.466-4.27-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.714,297.809l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.985,295.343l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,292.878l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.526,290.412l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.9,300.274v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.174,297.809l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.444,295.343l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.715,292.878l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.986,290.412l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.256,287.947l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.9,295.343v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.175,292.878,58.9,295.343l4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.445,290.412l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.716,287.947l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.987,285.481l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.905,290.412v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.176,287.947l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.446,285.481l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.717,283.015l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.906,285.481v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.176,283.015l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.447,280.55l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.178,248.5l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.443,250.963l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.976,255.9l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.244,258.36l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.715,258.36l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.983,260.826l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.073,300.274,88.8,302.74l4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.341,302.74l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.812,302.74l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.08,305.205l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.512,260.826l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.78,263.291l-4.271,2.466,4.271,2.465,4.27-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.781,258.36l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.049,260.826l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.05,255.9l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.318,258.36l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.319,253.429l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.587,255.9l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.588,250.963l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.856,253.429l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.339,268.222l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.607,270.688l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.608,265.757l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.876,268.222l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,258.36l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.229,260.826l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,255.9l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.958,258.36l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,253.429l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.688,255.9v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,250.963V255.9l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.877,263.291l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.145,265.757l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.146,260.826l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.414,263.291l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.876,287.947v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,260.826v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.145,285.481l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.414,283.015l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.416,258.36l-4.271,2.466,4.271,2.465,4.27-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.683,260.826l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.446,246.032l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.711,248.5l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.714,243.567l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.979,246.032,71.708,248.5l4.271,2.465L80.25,248.5Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.982,241.1l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.247,243.567l-4.271,2.465,4.271,2.466,4.27-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.25,238.636,75.979,241.1l4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.514,241.1l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.258,248.5l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.526,246.032l-4.27,2.466,4.27,2.465L88.8,248.5Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.794,243.567l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.538,250.963l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.806,248.5l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.074,246.032,88.8,248.5l4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.345,233.705l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.615,236.17l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.876,238.636l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.62,231.239l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.891,233.705l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.152,236.17l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.9,228.774l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.166,231.239l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.427,233.705l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.518,236.17l-4.271,2.466,4.271,2.465,4.27-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.782,238.636l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.785,233.705l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.05,236.17l-4.27,2.466,4.27,2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.05,241.1l-4.27,2.466,4.27,2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.907,280.55v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.177,278.084l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.908,275.619v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.9,270.688v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.173,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.443,275.619v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.714,278.084v4.931l4.27,2.466V280.55Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.9,265.757v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.173,268.222v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.443,270.688v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.714,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.9,260.826v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.173,263.291v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.443,265.757v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.714,268.222v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.9,255.9v4.931l4.27,2.465V258.36Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.173,258.36v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.443,260.826v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.714,263.291v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M58.9,250.963V255.9l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.173,253.429v4.931l4.27,2.466V255.9Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M75.985,250.963V255.9l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.066,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.336,243.567V248.5l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.607,246.032v4.931l4.27,2.466V248.5Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.066,236.17V241.1l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.336,238.636v4.931l4.271,2.465V241.1Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.607,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,253.429v4.931l4.27,2.466V255.9Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.525,305.205v4.931L88.8,312.6v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.8,307.671V312.6l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,283.015v4.932l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.525,285.481v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,278.084v4.931l4.27,2.466V280.55Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.525,280.55v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.525,275.619v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,268.222v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.525,270.688v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M80.255,263.291v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M84.525,265.757v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.067,290.412v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M63.173,287.947v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.444,290.412v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M67.444,300.274v4.931l4.27,2.466V302.74Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.96,268.222v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.96,263.291v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M71.714,292.878v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.337,292.878v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.067,285.481v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.337,287.947v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.067,280.55v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.337,283.015v4.932l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.067,275.619v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.337,278.084v4.931l4.27,2.466V280.55Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.067,270.688v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.419,278.084v4.931l4.27,2.466V280.55Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.419,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.419,273.153l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.337,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,255.9v4.931l4.27,2.465V258.36Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,250.963V255.9l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,246.032v4.931l4.27,2.466V248.5Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,236.17V241.1l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,231.239v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,226.308v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,221.377v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,216.446v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,211.515v4.931l4.27,2.465V213.98Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,206.584v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M135.771,206.584l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,253.429v4.931l4.271,2.466V255.9Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,248.5v4.931l4.271,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,243.567V248.5l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,238.636v4.931l4.271,2.465V241.1Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,233.705v4.931l4.271,2.465V236.17Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,228.774v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,223.843v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,218.911v4.932l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,213.98v4.931l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,209.049v4.931l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M131.5,209.049l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,250.963V255.9l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,246.032v4.931l4.27,2.466V248.5Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,236.17V241.1l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,231.239v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,226.308v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,221.377v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,216.446v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,211.515v4.931l4.27,2.465V213.98Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M127.23,211.515l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,248.5v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,243.567V248.5l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,238.636v4.931l4.27,2.465V241.1Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,233.705v4.931l4.27,2.465V236.17Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,228.774v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,223.843v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,218.911v4.932l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,213.98v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M122.959,213.98l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,246.032v4.931l4.27,2.466V248.5Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,236.17V241.1l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,231.239v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,226.308v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,221.377v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,216.446v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M118.689,216.446l4.27,2.465V213.98Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.418,228.774v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.418,223.843v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.418,218.911v4.932l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M114.418,218.911l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.147,226.308v4.931l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.147,221.377v4.931l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M110.147,221.377l4.271,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.877,223.843v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M105.877,223.843l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.606,226.308v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M101.606,226.308l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.336,228.774v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.336,228.774l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.065,231.239v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M97.337,248.5v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M93.065,231.239l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
-    <path d="M88.794,233.705l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,236.17l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.419,238.636l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.148,241.1l-4.27,2.466V248.5l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.714,253.429l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M75.984,250.963l-4.27,2.466v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.337,307.671l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.607,305.205l-4.27,2.466V312.6l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M75.985,300.274l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,297.809l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.525,295.343l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.876,292.878l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.147,290.412l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.417,287.947l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.687,285.481l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.876,287.947l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.876,283.015l-4.27,2.466v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.876,278.084l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.148,275.619l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,268.222l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,263.291l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,265.757l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,260.826l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.066,285.481l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.066,280.55l-4.27,2.465v4.932l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.066,275.619l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.066,270.688l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.066,265.757l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.337,263.291l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.608,260.826l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.8,253.429,84.525,255.9v4.931L88.8,258.36Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.066,250.963l-4.27,2.466v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.337,248.5l-4.271,2.465V255.9l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.879,258.36l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.149,255.9l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.876,273.153l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.147,270.688l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.417,268.222l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.687,265.757l-4.27,2.465v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.958,263.291l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.958,268.222l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.958,273.153l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.958,278.084l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.958,283.015l-4.271,2.466v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,278.084l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,273.153l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,268.222l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,263.291l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,241.1l-4.27,2.466V248.5l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.419,243.567l-4.271,2.465v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.148,246.032l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,246.032l-4.27,2.466v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.419,248.5l-4.271,2.465V255.9l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.148,250.963l-4.27,2.466,4.27,2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,250.963l-4.27,2.466v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.419,253.429l-4.271,2.466v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,255.9l-4.27,2.465,4.27,2.466Z" transform="translate(-0.172 0.1)" className="f2c0 paintable" data-color='0' data-face="2" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.9,305.205v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.173,302.74l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.444,300.274l-4.271,2.466,4.271,2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,283.015l-4.271,2.466,4.271,2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.417,273.153l-4.27,2.466,4.27,2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.147,280.55l4.27-2.466-4.27-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.714,297.809l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M75.985,295.343l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,292.878l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.526,290.412l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.9,300.274v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.174,297.809l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.444,295.343l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    
+    <path d="M75.986,290.412l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.256,287.947l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.9,295.343v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.175,292.878,58.9,295.343l4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+
+    <path d="M71.716,287.947l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M75.987,285.481l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.905,290.412v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.176,287.947l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.446,285.481l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.717,283.015l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.906,285.481v4.931l4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.176,283.015l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.447,280.55l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.178,248.5l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.443,250.963l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M75.976,255.9l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.244,258.36l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.715,258.36l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M75.983,260.826l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.073,300.274,88.8,302.74l4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.341,302.74l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.812,302.74l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.08,305.205l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.512,260.826l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.78,263.291l-4.271,2.466,4.271,2.465,4.27-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.781,258.36l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.049,260.826l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.05,255.9l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.318,258.36l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.319,253.429l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.587,255.9l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.588,250.963l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.856,253.429l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.339,268.222l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.607,270.688l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.608,265.757l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.876,268.222l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,258.36l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.229,260.826l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,255.9l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.958,258.36l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,253.429l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.688,255.9v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,250.963V255.9l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.877,263.291l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.145,265.757l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.146,260.826l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.414,263.291l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.876,287.947v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,260.826v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.145,285.481l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.414,283.015l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.416,258.36l-4.271,2.466,4.271,2.465,4.27-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.683,260.826l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.446,246.032l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.711,248.5l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.714,243.567l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M75.979,246.032,71.708,248.5l4.271,2.465L80.25,248.5Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M75.982,241.1l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.247,243.567l-4.271,2.465,4.271,2.466,4.27-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.25,238.636,75.979,241.1l4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.514,241.1l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.258,248.5l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.526,246.032l-4.27,2.466,4.27,2.465L88.8,248.5Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.794,243.567l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.538,250.963l-4.27,2.466,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.806,248.5l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.074,246.032,88.8,248.5l4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.345,233.705l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.615,236.17l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.876,238.636l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.62,231.239l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.891,233.705l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.152,236.17l-4.271,2.466,4.271,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.9,228.774l-4.271,2.465,4.271,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.166,231.239l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.427,233.705l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.518,236.17l-4.271,2.466,4.271,2.465,4.27-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.782,238.636l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.785,233.705l-4.27,2.465,4.27,2.466,4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.05,236.17l-4.27,2.466,4.27,2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.05,241.1l-4.27,2.466,4.27,2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.907,280.55v4.931l4.271-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.177,278.084l-4.27,2.466,4.27,2.465,4.271-2.465Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.908,275.619v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f1c0 paintable" data-color='0' data-face="1" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.9,270.688v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.173,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.443,275.619v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.714,278.084v4.931l4.27,2.466V280.55Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.9,265.757v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.173,268.222v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.443,270.688v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.714,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.9,260.826v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.173,263.291v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.443,265.757v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.714,268.222v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.9,255.9v4.931l4.27,2.465V258.36Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.173,258.36v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.443,260.826v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.714,263.291v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M58.9,250.963V255.9l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.173,253.429v4.931l4.27,2.466V255.9Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M75.985,250.963V255.9l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.066,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.336,243.567V248.5l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.607,246.032v4.931l4.27,2.466V248.5Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.066,236.17V241.1l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.336,238.636v4.931l4.271,2.465V241.1Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.607,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,253.429v4.931l4.27,2.466V255.9Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.525,305.205v4.931L88.8,312.6v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.8,307.671V312.6l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,283.015v4.932l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.525,285.481v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,278.084v4.931l4.27,2.466V280.55Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.525,280.55v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.525,275.619v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,268.222v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.525,270.688v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M80.255,263.291v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M84.525,265.757v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.067,290.412v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M63.173,287.947v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.444,290.412v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M67.444,300.274v4.931l4.27,2.466V302.74Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.96,268.222v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.96,263.291v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M71.714,292.878v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.337,292.878v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.067,285.481v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.337,287.947v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.067,280.55v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.337,283.015v4.932l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.067,275.619v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.337,278.084v4.931l4.27,2.466V280.55Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.067,270.688v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.419,278.084v4.931l4.27,2.466V280.55Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.419,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.419,273.153l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.337,273.153v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,255.9v4.931l4.27,2.465V258.36Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,250.963V255.9l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,246.032v4.931l4.27,2.466V248.5Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,236.17V241.1l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,231.239v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,226.308v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,221.377v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,216.446v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,211.515v4.931l4.27,2.465V213.98Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,206.584v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M135.771,206.584l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,253.429v4.931l4.271,2.466V255.9Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,248.5v4.931l4.271,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,243.567V248.5l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,238.636v4.931l4.271,2.465V241.1Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,233.705v4.931l4.271,2.465V236.17Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,228.774v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,223.843v4.931l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,218.911v4.932l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,213.98v4.931l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,209.049v4.931l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M131.5,209.049l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,250.963V255.9l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,246.032v4.931l4.27,2.466V248.5Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,236.17V241.1l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,231.239v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,226.308v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,221.377v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,216.446v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,211.515v4.931l4.27,2.465V213.98Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M127.23,211.515l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,248.5v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,243.567V248.5l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,238.636v4.931l4.27,2.465V241.1Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,233.705v4.931l4.27,2.465V236.17Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,228.774v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,223.843v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,218.911v4.932l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,213.98v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M122.959,213.98l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,246.032v4.931l4.27,2.466V248.5Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,241.1v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,236.17V241.1l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,231.239v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,226.308v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,221.377v4.931l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,216.446v4.931l4.27,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M118.689,216.446l4.27,2.465V213.98Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.418,228.774v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.418,223.843v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.418,218.911v4.932l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M114.418,218.911l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.147,226.308v4.931l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.147,221.377v4.931l4.271,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M110.147,221.377l4.271,2.466v-4.932Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.877,223.843v4.931l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M105.877,223.843l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.606,226.308v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M101.606,226.308l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.336,228.774v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.336,228.774l4.27,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.065,231.239v4.931l4.27-2.465Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M97.337,248.5v4.931l4.27-2.466Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M93.065,231.239l4.27,2.466v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
+    <path d="M88.794,233.705l4.271,2.465v-4.931Z" transform="translate(-0.172 0.1)" className="f3c0 paintable" data-color='0' data-face="3" paintable="true" onMouseEnter={ changeTileColor }/>
     <path d="M137.915,275.434a.222.222,0,0,0,0,.418l6,3.487a.8.8,0,0,0,.721,0l5.906-3.41a.221.221,0,0,0,0-.417l-6-3.488a.8.8,0,0,0-.72,0Z" transform="translate(-0.172 0.1)" style={{ fill: "rgba(0,0,0,0)" }}/>
     <path id="selectColor1" data-color="1" className="selectColor" onClick={ changeBrushSelection } d="M52.615,337.739c-.931-9.559-21.965-9.245-22.621.006a6.289,6.289,0,0,0,.029.707l-.06,21.238c-.153,1.96,2.045,4.291,4.449,5.221,5.571,2.241,13.909,2.136,17.646-3.21.957.158.431-23.517.583-24.277C52.641,337.529,52.624,337.634,52.615,337.739Z" transform="translate(-0.172 0.1)" style={{ fill: "rgba(0,0,0,0)" }} className="flash"/>
     <path d="M92.955,396.4c-.244-2.747.2-6.323-2.694-7.809-.044-.028-.088-.042-.132-.067l-1.354-5.133a1.581,1.581,0,0,0-.2-.435l.015.006h0A94.165,94.165,0,0,0,84.8,368.673q-.619-1.755-1.313-3.481a77.128,77.128,0,0,0-4.825-9.945,1.234,1.234,0,0,0-.4-.434c-.079-.057-.161-.109-.241-.162s-.16-.107-.234-.166a1.8,1.8,0,0,0-.851-.319,1.939,1.939,0,0,0-.3-.008,3.02,3.02,0,0,0-2.583,2.305,4.334,4.334,0,0,0,.158,1.781c.226,1.268.5,2.523.812,3.771A77.882,77.882,0,0,0,79.01,373.9c.916,2.276,2.08,4.425,3.127,6.638.567,1.16,1.608,2.826,2.226,3.959,0,.009.008.009.012.014a1.939,1.939,0,0,0,.077.338c.1.277.2.564.306.856.157.437.319.883.475,1.315.385,1.062.739,2.028.93,2.55a4.1,4.1,0,0,0-.751,3.994,11.336,11.336,0,0,0,4.278,4.725c1.706,1.183,4.329,1.867,5.945.186C93.935,398.824,93.045,398.111,92.955,396.4Z" transform="translate(-0.172 0.1)" style={{ opacity: "0" }}/>
