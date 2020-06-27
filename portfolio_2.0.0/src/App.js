@@ -13,7 +13,9 @@ const [useStore] = create(set => ({
 }))
 
 const setColor = (nightMode) => {
+  var themeMetaTag = document.getElementById('themeColor')
   if (nightMode) {
+    console.log(themeMetaTag)
     return { 
       background: "rgb(28, 33, 48)",
       transition: "0.5s ease-in"

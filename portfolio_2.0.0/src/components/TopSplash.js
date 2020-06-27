@@ -1,7 +1,6 @@
 import * as React from "react"
 
 const TopSplash = () => {
-
   let selectedColor = 1;
   
   const changeTileColor = (e) => {

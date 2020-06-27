@@ -1,18 +1,14 @@
 import React from 'react'
 import Project from './Project'
-
 import SlinkyImage1 from '../images/work_images/slinky_1.jpg'
 import SlinkyImage2 from '../images/work_images/slinky_2.jpg'
 import SlinkyImage3 from '../images/work_images/slinky_2.jpg'
-
 import ExactDocsImage1 from '../images/work_images/exactdocs_1.jpg'
 import ExactDocsImage2 from '../images/work_images/exactdocs_2.jpg'
 import ExactDocsImage3 from '../images/work_images/exactdocs_3.jpg'
-
 import demoGBImage1 from '../images/work_images/demo_gb1.jpg'
 import demoGBImage2 from '../images/work_images/demo_gb2.jpg'
 import demoGBImage3 from '../images/work_images/demo_gb3.jpg'
-
 
 const MyWorkPanel = (props) => {
     return (

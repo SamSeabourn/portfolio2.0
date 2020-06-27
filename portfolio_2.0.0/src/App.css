@@ -182,54 +182,8 @@ button img {
 .project-columns div {
 }
 
-.center-text {
-  text-align: center;
-}
-
-.highlighted {
-   color: white;
-}
-
-.m-10vw {
-  margin: 10vw 10vw 0vw 10vw;
-}
-.m-top-10vw {
-  margin-top: 10vw;
-}
-
-.m-bottom-10vw {
-  margin-bottom: 10vw;
-}
-
-.m-top-5vw {
-  margin-top: 5vw;
-}
-
-.m-bottom-5vw {
-  margin-bottom: 5vw;
-}
-
-.p-bottom-10vw {
-  padding-bottom: 10vw;
-}
-.p-top-10vw {
-  padding-top: 10vw;
-}
-
-.p-sides-10vw {
-  padding-left: 10vw;
-  padding-right: 10vw;
-}
-
 .project-text {
   padding: 10vw;
-}
-
-.p-bottom-5w {
-  padding-bottom: 5vw;
-}
-.p-top-5vw {
-  padding-top: 5vw;
 }
 
 .drop-shadow {
@@ -264,7 +218,6 @@ button img {
   top: 4em;
   position: relative;
 }
-
 
 .slider-video {
   border: none;

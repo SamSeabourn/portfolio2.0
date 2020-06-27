@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import TechCard from './TechCard';
 import Slider from 'react-slick'
-
 import Tech1 from '../images/tech/tech (1).svg'
 import Tech2 from '../images/tech/tech (2).svg'
 import Tech3 from '../images/tech/tech (3).svg'

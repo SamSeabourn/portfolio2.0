@@ -14,7 +14,6 @@ const setTextColor = (nightMode) => {
   }
 }
 
-
 const Button = ( props ) => {
   const { linkUrl, linkText , darkIcon, lightIcon } = props 
   const openUrl = () => {
