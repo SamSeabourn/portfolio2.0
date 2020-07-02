@@ -48,7 +48,7 @@ const MyWorkPanel = (props) => {
             youtubeUrl={ "https://www.youtube.com/embed/5S6PauVO7To" }
             keyWords={ ["Mongo.DB.", "Node.js,", "Express,", "Server", "Side", "Rendering"] }
             writeUp={
-              "DemoGB allows indy GameBoy game developers to updload and try each other's creations on a 3D css GameBoy in the browser. This app was built in just over a week and utlises Server Side Rendering with Express and was build with utilises Mongo.DB."}
+              "DemoGB allows indy GameBoy game developers to upload and try each other's creations on a 3D GameBoy. This app was built in just over a week and utlises Server Side Rendering with Express and was build with utilises Mongo.DB."}
           />
         </div>
     )
