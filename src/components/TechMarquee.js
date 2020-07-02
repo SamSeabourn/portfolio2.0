@@ -33,7 +33,9 @@ class TechMarquee extends Component {
         arrows: false,
         mobileFirst: true,
         cssEase: 'ease-out',
-        centerMode: true
+        centerMode: true,
+        swipe: true,
+        swipeToSlide: true
       }
     }
   }
@@ -51,7 +53,9 @@ class TechMarquee extends Component {
         arrows: false,
         mobileFirst: true,
         cssEase: 'ease-out',
-        centerMode: true
+        centerMode: true,
+        swipe: true,
+        swipeToSlide: true
       }} )
     } else {
       this.setState( {  settings: {
@@ -64,7 +68,9 @@ class TechMarquee extends Component {
         arrows: false,
         mobileFirst: true,
         cssEase: 'ease-out',
-        centerMode: true
+        centerMode: true,
+        swipe: true,
+        swipeToSlide: true
       }} )
     }
   }

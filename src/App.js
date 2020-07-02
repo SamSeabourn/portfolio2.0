@@ -6,6 +6,7 @@ import ProjectsPanel from './components/ProjectPanel';
 import TopButtons from './components/TopButtons';
 import create from 'zustand'
 import Footer from './components/Footer';
+import ContactForm from './components/ContactForm';
 
 const [useStore] = create(set => ({
   nightMode: false,
@@ -83,19 +84,21 @@ const hi = () => {
 function App() {
   const nightMode  = useStore(state => state.nightMode);
   const toggleNightMode  = useStore(state => state.toggleNightMode);
-  
   return (
     <div className="App" style={ setColor( nightMode) }>
       <div className="content">
         <TitlePanel nightMode={ nightMode }/>
         <HeroPanel nightMode={ nightMode }/>
         <ProjectsPanel nightMode={ nightMode } />
-        <Footer nightMode={ nightMode } />
+        <ContactForm nightMode={ nightMode } />
         <TopButtons nightMode={ nightMode } toggleNightMode={ toggleNightMode }/>
-        { hi()}
+        { hi() }
       </div>
     </div>
   );
 }
 
 export default App;
+
+// <Footer nightMode={ nightMode } />
+

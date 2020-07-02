@@ -4,12 +4,12 @@ const setTextColor = (nightMode) => {
   if (nightMode) {
     return { 
       color: "#fff",
-      transition: "0.5s ease-in"
+      transition: "0.2s ease-in"
     }
   } else {
     return { 
       color: "#202536",
-      transition: "0.5s ease-in",
+      transition: "0.2s ease-in",
     }
   }
 }
@@ -28,4 +28,4 @@ const Button = ( props ) => {
   )
 }
 
-export default Button
+export default Button;

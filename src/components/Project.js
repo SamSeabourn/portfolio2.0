@@ -37,7 +37,7 @@ const setTextColor = (nightMode) => {
 const setBackgroundColor = (nightMode) => {
   if (nightMode) {
     return { 
-      background: "rgba(32,37,54,0.5)", 
+      background: "rgba(56, 65, 93, 0.25)", 
       transition: "0.5s ease-in"
     }
   } else {

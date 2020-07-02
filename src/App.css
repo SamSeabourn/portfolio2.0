@@ -13,6 +13,7 @@ body {
   transition: ease-in-out 1s;
 }
 
+
 h1, h2 {
   margin: 0;
   font-family: 'Lato', sans-serif;
@@ -34,18 +35,17 @@ button {
   text-align: center;
   margin: 0.5em;
   padding: 0 1em;
-  transition: 550ms ease-in-out;
+  transition: 50ms ease-in-out;
 }
 
 button:focus {outline:0;}
 
 button:hover {
+  cursor: pointer;
   background:  rgba(225,9,175,1);
   border: 2px solid rgba(206, 206, 206, 0);
   transition: 150ms ease-in-out;
-  -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
-  box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.05), 0px -5px 15px rgba(0,0,0,0.05);
 }
 
 button img {
@@ -53,6 +53,15 @@ button img {
   width: 1.1em;
   float: left;
   margin-right: 0.5em;
+}
+
+button:disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+#selectColor1:hover, #selectColor2:hover {
+  cursor: pointer;
 }
 
 #nightmodeButton {
@@ -70,6 +79,10 @@ button img {
 #nightmodeButton img {
   position: relative;
   width: 1em;
+}
+
+.paintable {
+  cursor: pointer;
 }
 
 .app {
@@ -169,7 +182,7 @@ button img {
 .project {
   position: relative; 
   z-index: 20;
-  box-shadow: 0px 10px 15px rgba(0,0,0,0.1), 0px -10px 15px rgba(0,0,0,0.1);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.05), 0px -5px 15px rgba(0,0,0,0.05);
   margin-top: 10vw;
 }
 
@@ -183,11 +196,6 @@ button img {
   padding: 10vw;
 }
 
-.drop-shadow {
-  -webkit-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
-  box-shadow: 0px 10px 9px -4px rgba(0,0,0,0.2);
-}
 
 .footer-panel {
   overflow: hidden;
@@ -202,6 +210,13 @@ button img {
   bottom: -9em;
   right: 25em;
 }
+
+.contact-form {
+  text-align: center;
+  padding: 10vw;
+  /* margin: 10vw 10vw 0vw 10vw */
+}
+
 
 .portrait {
   position: relative;
@@ -218,6 +233,41 @@ button img {
 
 .slider-video {
   border: none;
+}
+
+.email-input {
+  border-radius: 1em;
+  height: 2em;
+  padding: 2.5%;
+  width: 95%;
+  border: none;
+  background-color: lightgray;
+  font-family: 'Lato', sans-serif;
+}
+
+.email-input:focus{
+  outline: none;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.message-input {
+  border-radius: 1em;
+  height: 10em;
+  padding: 2.5%;
+  width: 95%;
+  border: none;
+  background-color: lightgray;
+  resize: none;
+  font-family: 'Lato', sans-serif;
+}
+
+.message-input:focus{
+  outline: none;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 .ytp-show-cards-title {
@@ -383,6 +433,14 @@ button img {
     font-size: 1.5em;
     padding: 0em 1em;
   }
+
+  #sendEmailButton {
+    height: 2.6em;
+    border-radius: 2.6em;
+    font-size: 1.2em;
+    padding: 0em 1em;
+    margin-left: 0em;
+  }
   
   h1,h2 {
     font-size: 4em;
@@ -393,6 +451,11 @@ button img {
   p {
     font-size: 1.5em;
     text-align: left;
+  }
+
+  .hidden {
+    transition: 1s ease-in-out;
+    opacity: 0;;
   }
 
   .flash {
@@ -486,6 +549,35 @@ button img {
     margin: 0.2em 0em 0.5em 0em ;
     font-size: 4.5em;
   }
+
+  .contact-form {
+    text-align: left;
+    padding: 5.4em;
+    /* margin: 5em ; */
+  }
+
+  .contact-title {
+    margin: 0 0 0 0px;
+  }
+
+  .email-input {
+    padding: 0px 10px;
+    width: 21em;
+    height: 2em;
+    font-size: 18px;
+  }
+
+  .message-input {
+    padding: 10px 10px;
+    width: 21em;
+    height: 10em;
+    font-size: 18px;
+  }
+
+  .contact-label {
+    margin: 14px 0px 5px 0px;
+  }
+
 }
 
 @media only screen and (min-width: 1440px) {
@@ -575,5 +667,31 @@ button img {
 
   .tech-marquee {
     margin: -29em 0 -4em 0px;
+  }
+
+  .contact-form {
+    text-align: left;
+    padding: 3em 7.9em;
+    /* margin: 7.9em 0em 0em 7.9em ; */
+  }
+
+  .contact-label {
+    font-size: 24px;
+  }
+
+  .email-input {
+    border-radius: 30px;
+    padding: 0px 10px;
+    width: 35em;
+    height: 3em;
+    font-size: 20px;
+  }
+
+  .message-input {
+    border-radius: 30px;
+    padding: 10px;
+    width: 35em;
+    height: 9em;
+    font-size: 20px;
   }
 }
