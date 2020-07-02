@@ -22,9 +22,9 @@ const setColor = (nightMode) => {
       transition: "0.5s ease-in"
     }
   } else {
-    themeMetaTag.setAttribute("content", "rgb(250, 250, 250)")
+    themeMetaTag.setAttribute("content", "rgb(255, 255, 255)")
     return { 
-      background: "rgb(250, 250, 250)", 
+      background: "rgb(255, 255, 255)", 
       transition: "0.5s ease-in"
     }
   }
@@ -87,11 +87,12 @@ function App() {
   return (
     <div className="App" style={ setColor( nightMode) }>
       <div className="content">
+        <TopButtons nightMode={ nightMode } toggleNightMode={ toggleNightMode }/>
         <TitlePanel nightMode={ nightMode }/>
         <HeroPanel nightMode={ nightMode }/>
         <ProjectsPanel nightMode={ nightMode } />
         <ContactForm nightMode={ nightMode } />
-        <TopButtons nightMode={ nightMode } toggleNightMode={ toggleNightMode }/>
+        <Footer nightMode={ nightMode } />
         { hi() }
       </div>
     </div>
@@ -100,5 +101,5 @@ function App() {
 
 export default App;
 
-// <Footer nightMode={ nightMode } />
+
 

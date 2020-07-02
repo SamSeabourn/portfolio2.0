@@ -199,21 +199,23 @@ button:disabled {
 
 .footer-panel {
   overflow: hidden;
-  position: relative;
-  margin-top: -66vw;
+  /* position: relative; */
+  margin-top: -65vw;
   z-index: 5;
 }
 
 .bottom-splash {
-  width: 175vw;
+  width: 53em;
   position: relative;
-  bottom: -9em;
-  right: 25em;
+  bottom: -1em;
+  right: 28em;
 }
 
 .contact-form {
   text-align: center;
   padding: 10vw;
+  position: relative;
+  z-index: 10 ;
   /* margin: 10vw 10vw 0vw 10vw */
 }
 
@@ -241,7 +243,7 @@ button:disabled {
   padding: 2.5%;
   width: 95%;
   border: none;
-  background-color: lightgray;
+  background-color: rgba(180,180,180,0.8);
   font-family: 'Lato', sans-serif;
 }
 
@@ -258,7 +260,7 @@ button:disabled {
   padding: 2.5%;
   width: 95%;
   border: none;
-  background-color: lightgray;
+  background-color: rgba(180,180,180,0.8);
   resize: none;
   font-family: 'Lato', sans-serif;
 }
@@ -521,16 +523,16 @@ button:disabled {
   }
 
   .footer-panel {
-    margin-top: -25em;
+    margin-top: -18em;
     position: relative;
     bottom: 0px;
   }
 
   .bottom-splash {
-    width: 72em;
-    bottom: -12em;
+    width: 60em;
+    bottom: -2em;
     right: 18em;
-}
+  }
 
   .bottom-link-icon {
     height: 3em;
@@ -693,5 +695,11 @@ button:disabled {
     width: 35em;
     height: 9em;
     font-size: 20px;
+  }
+
+    .bottom-splash {
+      width: 100em;
+      bottom: -2em;
+      right: 40em;
   }
 }

@@ -6,7 +6,7 @@ const Footer = (props) => {
   const setColor = (nightMode) => {
     if (nightMode) {
       return { 
-        background: "rgb(32, 37, 54)", 
+        background: "rgb(28, 33, 48", 
         transition: "0.5s ease-in"
       }
     } else {
