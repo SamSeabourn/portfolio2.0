@@ -42,13 +42,13 @@ const MyWorkPanel = (props) => {
             nightMode={ props.nightMode }
             projectName={ "DemoGB" }
             linkText={"DemoGB"}
-            linkUrl={ "https://exactdocs.com/"}
-            githubUrl={"https://github.com/SamSeabourn/Slinky"}
+            linkUrl={ "http://www.demomygb.games/"}
+            githubUrl={"https://github.com/SamSeabourn/DemoGB"}
             imageUrls={ [demoGBImage1, demoGBImage2, demoGBImage3] }
             youtubeUrl={ "https://www.youtube.com/embed/5S6PauVO7To" }
-            keyWords={ ["Mongo.DB", "Node.js,", "Express,", "Server", "Side", "Rendering"] }
+            keyWords={ ["Mongo.DB.", "Node.js,", "Express,", "Server", "Side", "Rendering"] }
             writeUp={
-              "DemoGB allows indy GameBoy game developers to updload and try each other's creations on a 3D css GameBoy in the browser. This app was built in just over a week and utlises Server Side Rendering with Express and was build with Node.js, Mongo.DB "}
+              "DemoGB allows indy GameBoy game developers to updload and try each other's creations on a 3D css GameBoy in the browser. This app was built in just over a week and utlises Server Side Rendering with Express and was build with utilises Mongo.DB."}
           />
         </div>
     )

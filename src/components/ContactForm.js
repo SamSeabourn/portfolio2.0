@@ -1,16 +1,3 @@
-// import React from 'react'
-
-// function ContactForm() {
-//   return (
-//     <div>
-      
-//     </div>
-//   )
-// }
-
-// export default ContactForm;
-
-
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 
@@ -18,13 +5,11 @@ import emailjs from 'emailjs-com';
 const setTextColor = (nightMode) => {
   if (nightMode) {
     return { 
-      // margin: "1em 1em 0.5em 1em",
       color: "#fff",
       transition: "0.2s ease-in"
     }
   } else {
     return { 
-      // margin: "1em 1em 0.5em 1em",
       color: "#202536",
       transition: "0.2s ease-in",
     }
@@ -34,15 +19,29 @@ const setTextColor = (nightMode) => {
 const setButtonTextColor = (nightMode) => {
   if (nightMode) {
     return { 
-      // margin: "1.5em",
       color: "#fff",
       transition: "0.2s ease-in"
     }
   } else {
     return { 
-      // margin: "1.5em",
       color: "#202536",
       transition: "0.2s ease-in",
+    }
+  }
+}
+
+const setInputColor = (nightMode) => {
+  if (nightMode) {
+    return { 
+      color: "#fff",
+      transition: "0.2s ease-in",
+      background: "rgba(0,0,0,0.5)"
+    }
+  } else {
+    return { 
+      color: "#202536",
+      transition: "0.2s ease-in",
+      background: "rgba(0,0,0,0.2)"
     }
   }
 }
@@ -85,11 +84,13 @@ function ContactForm(props) {
   return (
     <div className="contact-form" style={{ background: "rgba(255,0,0,0)"}}>
     <h2 className="text-gradient contact-title" > { title }</h2>
-      <form id="contactForm" style={{ color: "rgba(255,0,0,0)"}} onSubmit={ sendEmail }>
+      <form id="contactForm" className="" style={{ color: "rgba(255,0,0,0)"}} onSubmit={ sendEmail }>
         <p className="contact-label" style={ setTextColor( props.nightMode ) }> Email</p>
-        <input onChange={ checkComplete } type="email" className="email-input" name="name" />
+        <label style={{ display: "none"}} htmlFor="name"> Name </label>
+        <input onChange={ checkComplete } style={ setInputColor( props.nightMode ) } id="name" type="email" className="email-input" name="name" />
         <p className="contact-label" style={  setTextColor( props.nightMode ) }> Message </p>
-        <textarea onChange={ checkComplete } className="message-input" name="message_html" />
+        <label style={{ display: "none"}} htmlFor="message"> Message </label>
+        <textarea onChange={ checkComplete } style={ setInputColor( props.nightMode ) } id="message" className="message-input" name="message_html" />
         <br/>        
         <button disabled={ true } id="sendEmailButton" style={ setButtonTextColor( props.nightMode ) } type="submit" value="Send"> Reach Out </button>
       </form>

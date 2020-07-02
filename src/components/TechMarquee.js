@@ -25,7 +25,7 @@ class TechMarquee extends Component {
     this.state ={
       settings: {
         infinite: true,
-        slidesToShow: 2,
+        slidesToShow: 6,
         speed: 800,
         autoplay: true,
         autoplaySpeed: 2500,

@@ -24,12 +24,14 @@ const setTextColor = (nightMode) => {
   if (nightMode) {
     return { 
       color: "#fff", 
-      transition: "0.5s ease-in"
+      transition: "0.5s ease-in",
+      lineHeight: "1.5em"
     }
   } else {
     return { 
       color: "rgba(32, 37, 54)", 
-      transition: "0.5s ease-in"
+      transition: "0.5s ease-in",
+      lineHeight: "1.5em"
     }
   }
 }
@@ -167,7 +169,7 @@ const Project = ( props ) => {
           </div>
           <div className="slider-images">
             <Slider {...sliderSettings}>
-              { urls.map( ( url ) => { return <img ref={ imgElement } onLoad={ () =>  setIframeSize( iFrameElement.current ) } className="slider-image" src={ url.value } key={ guid() }></img> }) }
+              { urls.map( ( url ) => { return <img ref={ imgElement } onLoad={ () =>  setIframeSize( iFrameElement.current ) } className="slider-image" src={ url.value } alt={"slider" } key={ guid() }></img> }) }
               { youtubeDemo() }
             </Slider>
           </div>
@@ -179,7 +181,7 @@ const Project = ( props ) => {
         <div className="project-columns">
           <div className="slider-images">
             <Slider {...sliderSettings}>
-              { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } key={ guid() }></img> }) }
+              { urls.map( ( url ) => { return <img ref={ imgElement } className="slider-image" src={ url.value } alt={"slider" } key={ guid() }></img> }) }
               { youtubeDemo() }
             </Slider>
           </div>
