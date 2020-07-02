@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "26eff95eefcaff75e2e951a58f128469",
+    "revision": "88c36bd48dbf9eb83b735f90bc3e4592",
     "url": "/portfolio2.0/index.html"
   },
   {
-    "revision": "a6d058d5a1f03759e788",
-    "url": "/portfolio2.0/static/css/main.9ece2011.chunk.css"
+    "revision": "e2daae13bb5d1c64cd1e",
+    "url": "/portfolio2.0/static/css/main.6f5b17ab.chunk.css"
   },
   {
-    "revision": "4a4af7fadd8905497b21",
-    "url": "/portfolio2.0/static/js/2.867c3d68.chunk.js"
+    "revision": "6c50d9a083b34282a472",
+    "url": "/portfolio2.0/static/js/2.119c01fc.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/portfolio2.0/static/js/2.867c3d68.chunk.js.LICENSE.txt"
+    "url": "/portfolio2.0/static/js/2.119c01fc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a6d058d5a1f03759e788",
-    "url": "/portfolio2.0/static/js/main.0be00a3b.chunk.js"
+    "revision": "e2daae13bb5d1c64cd1e",
+    "url": "/portfolio2.0/static/js/main.7130af41.chunk.js"
   },
   {
     "revision": "3242178d893fa0f13c3f",
@@ -60,10 +60,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio2.0/static/media/exactdocs_3.720bfba7.jpg"
   },
   {
-    "revision": "d82258c1a9977e9efa39e246641f2045",
-    "url": "/portfolio2.0/static/media/icon_github.d82258c1.svg"
-  },
-  {
     "revision": "902f0954eb74fccb9244025f0ea153ad",
     "url": "/portfolio2.0/static/media/icon_github2.902f0954.svg"
   },
@@ -72,28 +68,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio2.0/static/media/icon_github2_dark.f59a4977.svg"
   },
   {
-    "revision": "859774f16fd0aab3831712edd5c51516",
-    "url": "/portfolio2.0/static/media/icon_github_dark.859774f1.svg"
-  },
-  {
-    "revision": "89ebff71a9abed075d05cd5bb6564a8c",
-    "url": "/portfolio2.0/static/media/icon_linkedin.89ebff71.svg"
-  },
-  {
-    "revision": "3119dddb8e2c605ba0f981c4f156c7e6",
-    "url": "/portfolio2.0/static/media/icon_linkedin_dark.3119dddb.svg"
-  },
-  {
     "revision": "d53081f9d102de3fe6ce2d6b89790937",
     "url": "/portfolio2.0/static/media/icon_moon.d53081f9.svg"
-  },
-  {
-    "revision": "cb30f60c7f2bcb4250a3132cf4e27fc6",
-    "url": "/portfolio2.0/static/media/icon_resume.cb30f60c.svg"
-  },
-  {
-    "revision": "f5e386c024368f1bd4ec5bca7b1d2a6a",
-    "url": "/portfolio2.0/static/media/icon_resume_dark.f5e386c0.svg"
   },
   {
     "revision": "569ccf9683720ab89e414980780b9e7b",
