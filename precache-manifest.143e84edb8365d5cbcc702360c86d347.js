@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "47a03fde9d57ded2aec5f745d813bdfd",
+    "revision": "6cae7656f0be53d9587b49753750e95e",
     "url": "/portfolio2.0/index.html"
   },
   {
-    "revision": "0a073d6c9b91775ea4d9",
-    "url": "/portfolio2.0/static/css/main.3891dce9.chunk.css"
+    "revision": "4e986f4da78eea480876",
+    "url": "/portfolio2.0/static/css/main.7d094b10.chunk.css"
   },
   {
     "revision": "6c50d9a083b34282a472",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio2.0/static/js/2.119c01fc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0a073d6c9b91775ea4d9",
-    "url": "/portfolio2.0/static/js/main.5b2a09f8.chunk.js"
+    "revision": "4e986f4da78eea480876",
+    "url": "/portfolio2.0/static/js/main.66dfe0cd.chunk.js"
   },
   {
     "revision": "3242178d893fa0f13c3f",
@@ -36,28 +36,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio2.0/static/media/Sam_Logo.ca69d3c1.svg"
   },
   {
-    "revision": "9568fe75c2900082542aa8acee1885a9",
-    "url": "/portfolio2.0/static/media/demo_gb1.9568fe75.jpg"
+    "revision": "c7490838e44dda1c6d71fb43f4727eb2",
+    "url": "/portfolio2.0/static/media/demo_gb1.c7490838.jpg"
   },
   {
-    "revision": "c9aa1724dad5e020a1efafb83f2f093d",
-    "url": "/portfolio2.0/static/media/demo_gb2.c9aa1724.jpg"
+    "revision": "1e8e694776435942e4ae9bfea848d21e",
+    "url": "/portfolio2.0/static/media/demo_gb2.1e8e6947.jpg"
   },
   {
-    "revision": "f35f9623f7098ee0f42e5010a94389a9",
-    "url": "/portfolio2.0/static/media/demo_gb3.f35f9623.jpg"
+    "revision": "819e6f8c8ffd9f59ff0a34b797a71012",
+    "url": "/portfolio2.0/static/media/demo_gb3.819e6f8c.jpg"
   },
   {
-    "revision": "6e3759df8e8f95dfc8771791fcd914aa",
-    "url": "/portfolio2.0/static/media/exactdocs_1.6e3759df.jpg"
+    "revision": "1b433a04992d7403c53de69c1c6115f8",
+    "url": "/portfolio2.0/static/media/exactdocs_1.1b433a04.jpg"
   },
   {
-    "revision": "d0b2c471c2fce3fc252cbe4920a051cf",
-    "url": "/portfolio2.0/static/media/exactdocs_2.d0b2c471.jpg"
+    "revision": "457d4b189c9f0e97700854ab3c756987",
+    "url": "/portfolio2.0/static/media/exactdocs_2.457d4b18.jpg"
   },
   {
-    "revision": "720bfba7fc3cb67ae978b9086e273611",
-    "url": "/portfolio2.0/static/media/exactdocs_3.720bfba7.jpg"
+    "revision": "c9d12c6f9536136ddadf851c046b7ab2",
+    "url": "/portfolio2.0/static/media/exactdocs_3.c9d12c6f.jpg"
   },
   {
     "revision": "902f0954eb74fccb9244025f0ea153ad",
@@ -84,12 +84,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio2.0/static/media/icon_url_dark.24587ead.svg"
   },
   {
-    "revision": "25d2d90877855744e601c5d9113aaa2a",
-    "url": "/portfolio2.0/static/media/slinky_1.25d2d908.jpg"
+    "revision": "0ab8527addfb908fdf81fddb71d15997",
+    "url": "/portfolio2.0/static/media/slinky_1.0ab8527a.jpg"
   },
   {
-    "revision": "1dd729c6095b9fc9c4afbb2eaa7d6889",
-    "url": "/portfolio2.0/static/media/slinky_2.1dd729c6.jpg"
+    "revision": "40623037f329391afe56adb8426cf6be",
+    "url": "/portfolio2.0/static/media/slinky_2.40623037.jpg"
   },
   {
     "revision": "7118ce3724ea4d08a9d9c3ecdc582a89",
