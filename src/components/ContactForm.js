@@ -57,14 +57,13 @@ const checkComplete = (e) => {
   }
 }
 
-
 function ContactForm(props) {
-
-  const [title, setTitle ] = useState("Let's Work Together.")
+  const [title, setTitle] = useState("Let's Work Together.")
+  
+  const { nightMode } = props 
 
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log(e)
     const contactForm = document.getElementById('contactForm')
     contactForm.classList.add('hidden')
     updateTitle();
@@ -81,17 +80,17 @@ function ContactForm(props) {
   }
 
   return (
-    <div className="contact-form" style={{ background: "rgba(255,0,0,0)"}}>
+    <div className="contact-form" style={{ background: "rgba(255,0,0,0)" }}>
     <h2 className="text-gradient contact-title" > { title }</h2>
-      <form id="contactForm" className="" style={{ color: "rgba(255,0,0,0)"}} onSubmit={ sendEmail }>
-        <p className="contact-label" style={ setTextColor( props.nightMode ) }> Email</p>
+      <form id="contactForm" className="" style={{ color: "rgba(255,0,0,0)" }} onSubmit={ sendEmail }>
+        <p className="contact-label" style={ setTextColor( nightMode ) }> Email</p>
         <label style={{ display: "none"}} htmlFor="name"> Name </label>
-        <input onChange={ checkComplete } style={ setInputColor( props.nightMode ) } id="name" type="email" className="email-input" name="name" />
-        <p className="contact-label" style={  setTextColor( props.nightMode ) }> Message </p>
+        <input onChange={ checkComplete } style={ setInputColor(nightMode) } id="name" type="email" className="email-input" name="name" />
+        <p className="contact-label" style={  setTextColor(nightMode) }> Message </p>
         <label style={{ display: "none"}} htmlFor="message"> Message </label>
-        <textarea onChange={ checkComplete } style={ setInputColor( props.nightMode ) } id="message" className="message-input" name="message_html" />
+        <textarea onChange={ checkComplete } style={ setInputColor(nightMode) } id="message" className="message-input" name="message_html" />
         <br/>        
-        <button disabled={ true } id="sendEmailButton" style={ setButtonTextColor( props.nightMode ) } type="submit" value="Send"> Reach Out </button>
+        <button disabled={ true } id="sendEmailButton" style={ setButtonTextColor(nightMode) } type="submit" value="Send"> Reach Out </button>
       </form>
     </div>
 
