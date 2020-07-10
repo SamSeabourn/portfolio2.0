@@ -5,7 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 // Waiting on react-slick update
-//
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App />
@@ -18,4 +17,4 @@ ReactDOM.render(
 document.getElementById("root")
 );
 
-serviceWorker.unregister();
+serviceWorker.register();

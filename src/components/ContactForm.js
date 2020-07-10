@@ -62,7 +62,6 @@ function ContactForm(props) {
 
   const [title, setTitle ] = useState("Let's Work Together.")
 
-
   const sendEmail = (e) => {
     e.preventDefault();
     console.log(e)
