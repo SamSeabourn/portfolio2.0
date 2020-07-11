@@ -53,7 +53,7 @@ class TechMarquee extends Component {
         arrows: false,
         mobileFirst: true,
         cssEase: 'ease-out',
-        centerMode: true,
+        centerMode: false,
         swipe: true,
         swipeToSlide: true
       }} )
@@ -61,17 +61,20 @@ class TechMarquee extends Component {
       this.setState( {  settings: {
         infinite: true,
         slidesToShow: 2,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         speed: 800,
         autoplay: true,
         autoplaySpeed: 2500,
         dots: false,
         arrows: false,
         mobileFirst: true,
-        // cssEase: 'ease-out',
+        cssEase: 'ease-out',
         centerMode: true,
-        swipe: true,
+        swipe: false,
         swipeToSlide: true,
+        touchMove: false,
+        draggable: false,
+        accessibility: false
       }})
     }
   }

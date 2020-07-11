@@ -3,7 +3,7 @@ import './App.css';
 
 const TitlePanel = React.lazy(() => import('./components/TitlePanel'));
 const HeroPanel = React.lazy(() => import('./components/HeroPanel'));
-const ProjectsPanel = React.lazy(() => import('./components/ProjectPanel'));
+const ProjectPanel = React.lazy(() => import('./components/ProjectPanel'));
 const TopButtons = React.lazy(() => import('./components/TopButtons'));
 const Footer = React.lazy(() => import('./components/Footer'));
 const ContactForm = React.lazy(() => import('./components/ContactForm'));
@@ -32,7 +32,7 @@ function App() {
   const loadingMessage = <div> Loading... </div> 
 
   return (
-    <Suspense fallback={ <div> Something Went Wrong! </div> }>
+    <Suspense fallback={ <div> Now loading... <span role="image" alt="laptop">💻 </span> </div> }>
     <div className="App" style={ setColor( nightMode) }>
         <div className="content">
           <Suspense fallback={ loadingMessage }>
@@ -45,7 +45,7 @@ function App() {
             <HeroPanel nightMode={ nightMode }/>
           </Suspense>
           <Suspense fallback={ loadingMessage }>
-            <ProjectsPanel nightMode={ nightMode }/>
+            <ProjectPanel nightMode={ nightMode }/>
           </Suspense>
           <Suspense fallback={ loadingMessage }>
             <ContactForm nightMode={ nightMode }/>
