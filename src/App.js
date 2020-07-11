@@ -30,7 +30,6 @@ function App() {
   };
   
   const loadingMessage = <div> Loading... </div> 
-
   return (
     <Suspense fallback={ <div> Spooling up... <span role="image" alt="laptop">💻 </span> </div> }>
     <div className="App" style={ setColor( nightMode) }>
