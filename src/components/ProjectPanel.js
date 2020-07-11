@@ -26,7 +26,6 @@ const MyWorkPanel = (props) => {
             writeUp={
               "Slinky is a Chrome Extension designed to manage and search though bookmarks with hotkeys and hashtags. This application is built with React using a custom webpack and utilizes Firebase's live database and anoynmous authentication to deliver a faster alternative to vanilla bookmarking."}
           />
-            
           <Project
             nightMode={ props.nightMode }
             projectName={ "ExactDocs" }
@@ -37,7 +36,6 @@ const MyWorkPanel = (props) => {
             writeUp={
               "With ExactDocs you can centralize and control all of your document templates and use them to generate perfectly compliant and accurate documents every time. ExactDocs is built with Microsoft .Net in C# with has been undergoing continuous product updates based on user feedback."}
           />
-
           <Project
             nightMode={ props.nightMode }
             projectName={ "DemoGB" }
