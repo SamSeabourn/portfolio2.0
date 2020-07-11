@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import './App.css';
-import TitlePanel from './components/TitlePanel';
-import HeroPanel from './components/HeroPanel';
-import ProjectsPanel from './components/ProjectPanel';
-import TopButtons from './components/TopButtons';
-import Footer from './components/Footer';
-import ContactForm from './components/ContactForm';
-import Flanders from './components/Flanders'
+
+const TitlePanel = React.lazy(() => import('./components/TitlePanel'));
+const HeroPanel = React.lazy(() => import('./components/HeroPanel'));
+const ProjectsPanel = React.lazy(() => import('./components/ProjectPanel'));
+const TopButtons = React.lazy(() => import('./components/TopButtons'));
+const Footer = React.lazy(() => import('./components/Footer'));
+const ContactForm = React.lazy(() => import('./components/ContactForm'));
+const Flanders = React.lazy(() => import('./components/Flanders'));
 
 function App() {
   const [nightMode, setNightMode] = useState(false);
@@ -28,18 +29,34 @@ function App() {
     };
   };
   
+  const loadingMessage = <div> Loading... </div> 
+
   return (
+    <Suspense fallback={ <div> Something Went Wrong! </div> }>
     <div className="App" style={ setColor( nightMode) }>
-      <div className="content">
-        <TopButtons nightMode={ nightMode } setNightMode={ setNightMode }/>
-        <TitlePanel nightMode={ nightMode }/>
-        <HeroPanel nightMode={ nightMode }/>
-        <ProjectsPanel nightMode={ nightMode }/>
-        <ContactForm nightMode={ nightMode }/>
-        <Footer nightMode={ nightMode }/>
-        <Flanders />
+        <div className="content">
+          <Suspense fallback={ loadingMessage }>
+            <TopButtons nightMode={ nightMode } setNightMode={ setNightMode }/>
+          </Suspense>
+          <Suspense fallback={ loadingMessage }>
+            <TitlePanel nightMode={ nightMode }/>
+          </Suspense>
+          <Suspense fallback={ loadingMessage }>
+            <HeroPanel nightMode={ nightMode }/>
+          </Suspense>
+          <Suspense fallback={ loadingMessage }>
+            <ProjectsPanel nightMode={ nightMode }/>
+          </Suspense>
+          <Suspense fallback={ loadingMessage }>
+            <ContactForm nightMode={ nightMode }/>
+          </Suspense>
+          <Suspense fallback={ loadingMessage }>
+            <Footer nightMode={ nightMode }/>
+          </Suspense>
+          <Flanders />
+        </div>
       </div>
-    </div>
+    </Suspense>
   );
 }
 
