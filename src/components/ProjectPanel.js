@@ -22,9 +22,9 @@ const MyWorkPanel = (props) => {
             githubUrl={"https://github.com/SamSeabourn/Slinky"}
             imageUrls={ [SlinkyImage1, SlinkyImage2, SlinkyImage3 ] }
             youtubeUrl={ "https://www.youtube.com/embed/CtrtrZHS5q8" }
-            keyWords={ ["Firebase", "React", "Slinky", "Chrome", "Extension" ] }
+            keyWords={ ["Firebase's", "React", "Slinky", "Chrome", "Extension" ] }
             writeUp={
-              "Slinky is a Chrome Extension designed to manage and search though bookmarks with hotkeys and hashtags. This application is built with React using a custom webpack and utilizes Firebase's live database and Anoynmous authentication to deliver a faster alternative to vanilla bookmarking."}
+              "Slinky is a Chrome Extension designed to manage and search though bookmarks with hotkeys and hashtags. This application is built with React using a custom webpack and utilizes Firebase's live database and anoynmous authentication to deliver a faster alternative to vanilla bookmarking."}
           />
             
           <Project
@@ -35,7 +35,7 @@ const MyWorkPanel = (props) => {
             imageUrls={ [ExactDocsImage1, ExactDocsImage2, ExactDocsImage3] }
             keyWords={ ["ExactDocs", "C#", ".Net" ] }
             writeUp={
-              "With ExactDocs you can centralize and control all of your document templates and use them to generate perfectly compliant and accurate documents every time. ExactDocs is built with Microsoft .Net in C# with has been undergoing continious product updates based on users feedback."}
+              "With ExactDocs you can centralize and control all of your document templates and use them to generate perfectly compliant and accurate documents every time. ExactDocs is built with Microsoft .Net in C# with has been undergoing continuous product updates based on user feedback."}
           />
 
           <Project
@@ -46,9 +46,9 @@ const MyWorkPanel = (props) => {
             githubUrl={"https://github.com/SamSeabourn/DemoGB"}
             imageUrls={ [demoGBImage1, demoGBImage2, demoGBImage3] }
             youtubeUrl={ "https://www.youtube.com/embed/5S6PauVO7To" }
-            keyWords={ ["Mongo.DB.", "Node.js,", "Express,", "Server", "Side", "Rendering"] }
+            keyWords={ ["Mongo.DB.", "Node.js,", "Express", "Server", "Side", "Rendering"] }
             writeUp={
-              "DemoGB allows indy GameBoy game developers to upload and try each other's creations on a 3D GameBoy. This app was built in just over a week and utlises Server Side Rendering with Express and was build with utilises Mongo.DB."}
+              "DemoGB allows indy GameBoy game developers to upload and try each other's creations on a simulated 3D GameBoy in the browser. This app was built in just over a week and utlises Server Side Rendering with Express, blob storage and Mongo.DB."}
           />
         </div>
     )
