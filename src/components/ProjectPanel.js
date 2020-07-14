@@ -34,7 +34,7 @@ const MyWorkPanel = (props) => {
             imageUrls={ [ExactDocsImage1, ExactDocsImage2, ExactDocsImage3] }
             keyWords={ ["ExactDocs", "C#", ".Net" ] }
             writeUp={
-              "With ExactDocs you can centralize and control all of your document templates and use them to generate perfectly compliant and accurate documents every time. ExactDocs is built with Microsoft .Net in C# with has been undergoing continuous product updates based on user feedback."}
+              "With ExactDocs you can centralize and control all of your document templates and use them to generate perfectly compliant and accurate documents every time. ExactDocs is built with Microsoft .Net in C# by Solentive Software and has been undergoing continuous product updates based on user feedback."}
           />
           <Project
             nightMode={ props.nightMode }
