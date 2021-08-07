@@ -13,6 +13,23 @@ body {
   transition: ease-in-out 1s;
 }
 
+::-webkit-scrollbar{
+  width: 13px;
+  height: 13px;
+  }
+  ::-webkit-scrollbar-thumb{
+  background: #FF8724;
+  border-radius: 25px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+  background: #FFAC63;
+  }
+  ::-webkit-scrollbar-track{
+  background: #F0F0F0;
+  border-radius: 0px;
+  box-shadow: inset 3.7px 0px 9px 0px #D9D6D6;
+  }
+
 
 h1, h2 {
   margin: 0;
@@ -109,6 +126,22 @@ button:disabled {
   box-shadow: none;
 }
 
+.slick-prev {
+  position: absolute;
+  left: 12px;
+  z-index: 1;
+}
+
+.slick-next {
+  position: absolute;
+  right: 12px;
+  z-index: 1;
+}
+
+.slick-next:before, .slick-prev:before {
+  color: gray;
+}
+
 .text-gradient {
   background-image: rgb(225,9,175);
   background-image: -moz-linear-gradient(270deg, rgba(225,9,175,1) 0%, rgba(251,120,47,1) 100%);
@@ -153,7 +186,8 @@ button:disabled {
   background-color: #fff;
   border-radius: 5px;
   padding: 2% 7%;
-  
+  -webkit-box-shadow: 0px 5px 27px -1px rgba(0,0,0,0.34); 
+  box-shadow: 0px 5px 27px -1px rgba(0,0,0,0.34);
 }
 
 .tech-card img{
@@ -192,7 +226,8 @@ button:disabled {
 .project {
   position: relative; 
   z-index: 20;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.05), 0px -5px 15px rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0px 5px 27px -1px rgba(0,0,0,0.14); 
+  box-shadow: 0px 5px 27px -1px rgba(0,0,0,0.14);
   margin-top: 10vw;
 }
 

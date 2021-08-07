@@ -1,8 +1,11 @@
 import React from 'react'
 import Project from './Project'
+import saltImages1 from '../images/work_images/salt_1.png'
+import saltImages2 from '../images/work_images/salt_2.png'
+import saltImages3 from '../images/work_images/salt_3.png'
 import SlinkyImage1 from '../images/work_images/slinky_1.jpg'
 import SlinkyImage2 from '../images/work_images/slinky_2.jpg'
-import SlinkyImage3 from '../images/work_images/slinky_2.jpg'
+import SlinkyImage3 from '../images/work_images/slinky_3.jpg'
 import ExactDocsImage1 from '../images/work_images/exactdocs_1.jpg'
 import ExactDocsImage2 from '../images/work_images/exactdocs_2.jpg'
 import ExactDocsImage3 from '../images/work_images/exactdocs_3.jpg'
@@ -14,6 +17,16 @@ const MyWorkPanel = (props) => {
     return (
         <div className="project-panel" style={{ background: "rgba(0,0,0,0)"}}>
           <h2 className="text-gradient"> My Work.</h2>
+          <Project
+            nightMode={ props.nightMode }
+            projectName={ "Salt Compliance LMS" }
+            linkText={"GRC Solutions"}
+            linkUrl={ "https://www.grcsolutions.com.au/platforms/our-platforms"}
+            imageUrls={ [saltImages1, saltImages2, saltImages3 ] }
+            keyWords={ ["Salt", "Hooks,", "React,", "Context", "API", "CSS", "Modules." ] }
+            writeUp={
+              "Salt is a purpose build Compliance LMS by created GRC Solutions. The Front End has been redesigned and rebuilt from the ground up using React, Hooks, Context API and CSS Modules. This includes a rework and integration with a 20 year old LMS player and has been designed to be a completely white label product that a client can taylor to suit their own branding."}
+          />
           <Project
             nightMode={ props.nightMode }
             projectName={ "Slinky" }
@@ -41,7 +54,7 @@ const MyWorkPanel = (props) => {
             projectName={ "DemoGB" }
             linkText={"DemoGB"}
             linkUrl={ "http://www.demomygb.games/"}
-            githubUrl={"https://github.com/SamSeabourn/DemoGB"}
+            githubUrl={"https://demomygb.herokuapp.com/"}
             imageUrls={ [demoGBImage1, demoGBImage2, demoGBImage3] }
             youtubeUrl={ "https://www.youtube.com/embed/5S6PauVO7To" }
             keyWords={ ["Mongo.DB.", "Node.js,", "Express", "Server", "Side", "Rendering"] }
