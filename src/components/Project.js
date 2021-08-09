@@ -237,7 +237,6 @@ const Project = (props) => {
           >
             <p className="project-text" style={setTextColor(props.nightMode)}>
               {writeUpText.map((word) => {
-                console.log(word)
                 return keyWords.includes(word) ? (
                   <strong key={guid()}>{`${word} `}</strong>
                 ) : (

@@ -37,7 +37,7 @@ const HeroPanel = (props) => {
         <p className="hero-panel-text" style={ setTextColor( props.nightMode ) }>
           I am a Web Developer with a passion for responsive and performant user experiences.  
           I believe that software should not only function well but also <strong> feel great </strong> to use. 
-          I love working with people to bring these type of experiences to the web.
+          I love working with people to bring these types of experiences to the web.
         </p>
         <img className="portrait" alt="Self portrait of a software engineer" src={ Portrait } />
         <TechMarquee />

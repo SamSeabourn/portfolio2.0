@@ -9,6 +9,10 @@ body {
   min-width: 300px;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .selectedColor {
   transition: ease-in-out 1s;
 }
@@ -142,6 +146,11 @@ button:disabled {
   color: gray;
 }
 
+.slick-next:focus, .slick-next:hover, .slick-prev:focus, .slick-prev:hover {
+  background-color: transparent;
+  border-radius: 25px;
+}
+
 .text-gradient {
   background-image: rgb(225,9,175);
   background-image: -moz-linear-gradient(270deg, rgba(225,9,175,1) 0%, rgba(251,120,47,1) 100%);
@@ -162,7 +171,7 @@ button:disabled {
 }
 
 .top-buttons {
-  position: absolute;
+  position: fixed;
   z-index: 120;
   top: 0px;
   right: 0px;
